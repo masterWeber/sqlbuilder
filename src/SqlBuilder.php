@@ -9,7 +9,7 @@ use Statement\Delete;
 class SqlBuilder
 {
 
-  public function insert(string $tableName): InsertInto
+  public function insertInto(string $tableName): InsertInto
   {
     return new InsertInto($tableName);
   }
