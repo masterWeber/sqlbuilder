@@ -1,7 +1,7 @@
 <?php
 
 
-use Statement\Insert;
+use Statement\InsertInto;
 use Statement\Select;
 use Statement\Update;
 use Statement\Delete;
@@ -9,9 +9,9 @@ use Statement\Delete;
 class SqlBuilder
 {
 
-  public function insert(string $tableName): Insert
+  public function insert(string $tableName): InsertInto
   {
-    return new Insert($tableName);
+    return new InsertInto($tableName);
   }
 
   public function select(array $fields = ['*']): Select

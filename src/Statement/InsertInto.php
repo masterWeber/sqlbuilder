@@ -4,7 +4,7 @@
 namespace Statement;
 
 
-class Insert extends Statement
+class InsertInto extends Statement
 {
 
   public function __construct(string $tableName)
