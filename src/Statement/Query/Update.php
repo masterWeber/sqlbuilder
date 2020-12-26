@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Statement;
+namespace Statement\Query;
 
 
-class InsertInto extends Statement
+class Update extends Query
 {
 
   public function __construct(string $tableName)
