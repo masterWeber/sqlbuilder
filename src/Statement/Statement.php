@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Query;
+namespace Statement;
 
 
-class Query
+class Statement
 {
 
   public function __toString(): string

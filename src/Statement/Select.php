@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Query;
+namespace Statement;
 
 
-class Select extends Query
+class Select extends Statement
 {
 
   public function __construct(array $fields)

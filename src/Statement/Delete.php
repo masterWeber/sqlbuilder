@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Query;
+namespace Statement;
 
 
-class Delete extends Query
+class Delete extends Statement
 {
 
   public function __construct()
