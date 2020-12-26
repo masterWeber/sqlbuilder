@@ -1,10 +1,10 @@
 <?php
 
 
-use Statement\InsertInto;
-use Statement\Select;
-use Statement\Update;
-use Statement\Delete;
+use Query\InsertInto;
+use Query\Select;
+use Query\Update;
+use Query\Delete;
 
 class SqlBuilder
 {
