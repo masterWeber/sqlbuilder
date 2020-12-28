@@ -4,28 +4,26 @@
 namespace Block;
 
 
-use Value;
+use AssignmentList;
 
 class Set
 {
-
   const STATEMENT = 'SET';
 
-  protected array $values = [];
+  protected ?AssignmentList $assignmentList;
 
-  public function __construct(array $values)
+  public function __construct(array $assignmentList)
   {
-    $this->values = $values;
+    $this->assignmentList = AssignmentList::fromArray($assignmentList);
+  }
+
+  public function where($column, $operator = null, $value = null): Where
+  {
+    return new Where($column, $operator, $value);
   }
 
   public function __toString(): string
   {
-    $exp = [];
-
-    foreach ($this->values as $col => $value) {
-      $exp[] = "`{$col}` = " . new Value($value);
-    }
-
-    return self::STATEMENT . " " . implode(', ', $exp);
+    return self::STATEMENT . " " . $this->assignmentList;
   }
 }

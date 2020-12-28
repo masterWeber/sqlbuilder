@@ -17,7 +17,7 @@ class InsertInto extends Query
 
   public function __construct(string $tableName)
   {
-    $this->tableName = $tableName;
+    $this->tableReference = $tableName;
   }
 
   public function columns(array $columns): self
@@ -45,7 +45,7 @@ class InsertInto extends Query
 
   protected function buildSql(): string
   {
-    $sql = self::STATEMENT . " `{$this->tableName}`";
+    $sql = self::STATEMENT . " `{$this->tableReference}`";
 
     if ($this->columns) {
       $sql .= " (`" . implode("`, `", $this->columns) . "`)";
