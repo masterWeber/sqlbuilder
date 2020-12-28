@@ -6,13 +6,13 @@ class Value
 
   protected string $type;
   /**
-   * @var int|string|bool|null
+   * @var mixed
    */
   protected $value;
 
   /**
    * Value constructor.
-   * @param int|string|bool|null $value
+   * @param mixed $value
    */
   public function __construct($value)
   {
@@ -29,8 +29,8 @@ class Value
         return $this->value ? 'true' : 'false';
       case 'NULL':
         return 'NULL';
+      default:
+        return (string)$this->value;
     }
-
-    return (string)$this->value;
   }
 }

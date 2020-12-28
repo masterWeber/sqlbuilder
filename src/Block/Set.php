@@ -20,19 +20,12 @@ class Set
 
   public function __toString(): string
   {
-    $sql = self::STATEMENT;
+    $exp = [];
 
     foreach ($this->values as $col => $value) {
-      $preparedValue = mb_strtolower($value) === 'default' ? 'DEFAULT' : new Value($value);
-
-      $sql .= " `{$col}` = {$preparedValue}";
-
-      if (array_key_last($this->values) !== $col) {
-        $sql .= ',';
-      }
-
+      $exp[] = "`{$col}` = " . new Value($value);
     }
 
-    return $sql;
+    return self::STATEMENT . " " . implode(', ', $exp);
   }
 }
