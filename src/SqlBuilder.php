@@ -14,9 +14,9 @@ class SqlBuilder
     return new InsertInto($tableName);
   }
 
-  public function select(array $fields = ['*']): Select
+  public function select(array $fields = ['*'], string $mode = null): Select
   {
-    return new Select($fields);
+    return new Select($fields, $mode);
   }
 
   public function update(string $tableName): Update
