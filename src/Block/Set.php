@@ -17,9 +17,9 @@ class Set
     $this->assignmentList = AssignmentList::fromArray($assignmentList);
   }
 
-  public function where($column, $operator = null, $value = null): Where
+  public function where($expr): Where
   {
-    return new Where($column, $operator, $value);
+    return new Where($expr);
   }
 
   public function __toString(): string

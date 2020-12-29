@@ -4,38 +4,61 @@
 namespace Block;
 
 
-use Closure;
 
 class Where
 {
   const STATEMENT = 'WHERE';
 
-  /**
-   * @param Closure|string|array $column
-   * @param mixed $operator
-   * @param mixed $value
-   * @return $this
-   */
-  public function __construct($column, $operator = null, $value = null)
+  public function __construct($expr = null)
   {
   }
 
-  public function in(): self
+  public function in(string $colName, array $values): self
   {
     return $this;
   }
 
-  public function equals(): self
+  public function notIn(string $colName, array $values): self
   {
     return $this;
   }
 
-  public function notEquals(): self
+  public function equals(string $colName, $value): self
   {
     return $this;
   }
 
-  public function like(): self
+  public function greaterThan($a, $b): self
+  {
+    return $this;
+  }
+
+  public function greaterThanOrEqual($a, $b): self
+  {
+    return $this;
+  }
+
+  public function lessThan($a, $b): self
+  {
+    return $this;
+  }
+
+  public function lessThanOrEqual($a, $b): self
+  {
+    return $this;
+  }
+
+  public function notEquals(string $colName, $value): self
+  {
+    return $this;
+  }
+
+  public function like(string $colName, $value): self
+  {
+    return $this;
+  }
+
+  public function notLike(): self
   {
     return $this;
   }
@@ -45,7 +68,32 @@ class Where
     return $this;
   }
 
+  public function isNot(): self
+  {
+    return $this;
+  }
+
+  public function isNull(): self
+  {
+    return $this;
+  }
+
+  public function isNotNull(): self
+  {
+    return $this;
+  }
+
   public function between(): self
+  {
+    return $this;
+  }
+
+  public function notBetween(): self
+  {
+    return $this;
+  }
+
+  public function group(): self
   {
     return $this;
   }
