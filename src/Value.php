@@ -3,34 +3,46 @@
 
 class Value
 {
-
-  protected string $type;
   /**
    * @var mixed
    */
   protected $value;
 
   /**
-   * Value constructor.
    * @param mixed $value
    */
   public function __construct($value)
   {
     $this->value = $value;
-    $this->type = gettype($value);
+  }
+
+  /**
+   * @param mixed $value
+   * @return string
+   */
+  public static function deflate($value): string
+  {
+    $type = gettype($value);
+
+    switch ($type) {
+      case 'string':
+        return self::quote($value);
+      case 'boolean':
+        return $value ? 'true' : 'false';
+      case 'NULL':
+        return 'NULL';
+      default:
+        return (string)$value;
+    }
+  }
+
+  public static function quote(string $string): string
+  {
+    return "'" . addslashes($string) . "'";
   }
 
   public function __toString(): string
   {
-    switch ($this->type) {
-      case 'string':
-        return "'{$this->value}'";
-      case 'boolean':
-        return $this->value ? 'true' : 'false';
-      case 'NULL':
-        return 'NULL';
-      default:
-        return (string)$this->value;
-    }
+    return self::deflate($this->value);
   }
 }
