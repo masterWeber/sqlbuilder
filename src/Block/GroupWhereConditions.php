@@ -1,7 +1,10 @@
 <?php
 
 
-class GroupConditions extends Conditions
+namespace Block;
+
+
+class GroupWhereConditions extends WhereConditions
 {
   public function __toString(): string
   {

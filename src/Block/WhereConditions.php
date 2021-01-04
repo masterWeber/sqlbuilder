@@ -1,8 +1,11 @@
 <?php
 
 
+namespace Block;
+
 use Clause\LimitClause;
 use Clause\OrderByClause;
+use Closure;
 use Expression\Between;
 use Expression\Binary;
 use Expression\Expression;
@@ -21,8 +24,9 @@ use Operator\LogicalNot;
 use Operator\LogicalOr;
 use Operator\LogicalXor;
 use Operator\Operator;
+use Value;
 
-class Conditions
+class WhereConditions
 {
   const STATEMENT = 'WHERE';
 
@@ -190,7 +194,7 @@ class Conditions
 
   public function group(Closure $closure): self
   {
-    $groupCondition = new GroupConditions();
+    $groupCondition = new GroupWhereConditions();
     $closure($groupCondition);
     $this->expressions[] = $groupCondition;
 

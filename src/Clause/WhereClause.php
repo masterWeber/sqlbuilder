@@ -4,12 +4,12 @@
 namespace Clause;
 
 
-use Conditions;
+use Block\WhereConditions;
 
 trait WhereClause
 {
-  public function where($expression = null): Conditions
+  public function where($expression = null): WhereConditions
   {
-    return new Conditions($expression, $this);
+    return new WhereConditions($expression, $this);
   }
 }

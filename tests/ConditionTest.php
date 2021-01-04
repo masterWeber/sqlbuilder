@@ -1,6 +1,7 @@
 <?php
 
 
+use Block\WhereConditions;
 use Expression\Raw;
 use PHPUnit\Framework\TestCase;
 
@@ -8,7 +9,7 @@ class ConditionTest extends TestCase
 {
   public function testEquals(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->equal('a', 25);
 
     $this->assertEquals(
@@ -16,7 +17,7 @@ class ConditionTest extends TestCase
       $condition->__toString()
     );
 
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->equal('a', 'str_val');
 
     $this->assertEquals(
@@ -27,7 +28,7 @@ class ConditionTest extends TestCase
 
   public function testNotEquals(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->notEqual('a', 25);
 
     $this->assertEquals(
@@ -35,7 +36,7 @@ class ConditionTest extends TestCase
       $condition->__toString()
     );
 
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->notEqual('a', 'str_val');
 
     $this->assertEquals(
@@ -46,7 +47,7 @@ class ConditionTest extends TestCase
 
   public function testGreaterThan(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->greaterThan('a', 25);
 
     $this->assertEquals(
@@ -57,7 +58,7 @@ class ConditionTest extends TestCase
 
   public function testGreaterThanOrEqual(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->greaterThanOrEqual('a', 25);
 
     $this->assertEquals(
@@ -68,7 +69,7 @@ class ConditionTest extends TestCase
 
   public function testLessThan(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->lessThan('a', 25);
 
     $this->assertEquals(
@@ -79,7 +80,7 @@ class ConditionTest extends TestCase
 
   public function testLessThanOrEqual(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->lessThanOrEqual('a', 25);
 
     $this->assertEquals(
@@ -90,7 +91,7 @@ class ConditionTest extends TestCase
 
   public function testIn(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->in('a', [2,45,'23']);
 
     $this->assertEquals(
@@ -101,7 +102,7 @@ class ConditionTest extends TestCase
 
   public function testNotIn(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->notIn('a', [2,45,'23']);
 
     $this->assertEquals(
@@ -112,7 +113,7 @@ class ConditionTest extends TestCase
 
   public function testLike(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->like('a', '%str_');
 
     $this->assertEquals(
@@ -123,7 +124,7 @@ class ConditionTest extends TestCase
 
   public function testNotLike(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->notLike('a', '%str_');
 
     $this->assertEquals(
@@ -134,7 +135,7 @@ class ConditionTest extends TestCase
 
   public function testIs(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->is('a', true);
 
     $this->assertEquals(
@@ -145,7 +146,7 @@ class ConditionTest extends TestCase
 
   public function testIsNot(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->isNot('a', true);
 
     $this->assertEquals(
@@ -156,7 +157,7 @@ class ConditionTest extends TestCase
 
   public function testIsNull(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->isNull('a');
 
     $this->assertEquals(
@@ -167,7 +168,7 @@ class ConditionTest extends TestCase
 
   public function testIsNotNull(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->isNotNull('a');
 
     $this->assertEquals(
@@ -178,7 +179,7 @@ class ConditionTest extends TestCase
 
   public function testBetween(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->between('a', 5, 7);
 
     $this->assertEquals(
@@ -186,7 +187,7 @@ class ConditionTest extends TestCase
       $condition->__toString()
     );
 
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->between('a', '1990-01-01', '2000-01-01');
 
     $this->assertEquals(
@@ -197,7 +198,7 @@ class ConditionTest extends TestCase
 
   public function testNotBetween(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->notBetween('a', 5, 7);
 
     $this->assertEquals(
@@ -205,7 +206,7 @@ class ConditionTest extends TestCase
       $condition->__toString()
     );
 
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->notBetween('a', '1990-01-01', '2000-01-01');
 
     $this->assertEquals(
@@ -216,7 +217,7 @@ class ConditionTest extends TestCase
 
   public function testRegexp(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->regexp('a', '^\S');
 
     $this->assertEquals(
@@ -227,7 +228,7 @@ class ConditionTest extends TestCase
 
   public function testNotRegexp(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->notRegexp('a', '^\S');
 
     $this->assertEquals(
@@ -238,7 +239,7 @@ class ConditionTest extends TestCase
 
   public function testLogicalOperators(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition
       ->equal('a', 25)
       ->and()
@@ -258,7 +259,7 @@ class ConditionTest extends TestCase
 
   public function testGroup(): void
   {
-    $condition = new Conditions();
+    $condition = new WhereConditions();
     $condition->group(function ($condition) {
       $condition->equal('id', 1);
     });
