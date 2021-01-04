@@ -24,6 +24,6 @@ class Assignment
 
   public function __toString(): string
   {
-    return "`{$this->colName}` = " . $this->value;
+    return $this->colName . " = " . $this->value;
   }
 }

@@ -12,7 +12,7 @@ class AssignmentTest extends TestCase
     $assignment = new Assignment('key', $value);
 
     $this->assertEquals(
-      "`key` = 32",
+      "key = 32",
       $assignment->__toString()
     );
   }
