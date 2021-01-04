@@ -1,12 +1,15 @@
 <?php
 
 
-use Block\Where;
+namespace Clause;
+
+
+use Conditions;
 
 trait WhereClause
 {
-  public function where($expr): Where
+  public function where($expression = null): Conditions
   {
-    return new Where($expr);
+    return new Conditions($expression, $this);
   }
 }
