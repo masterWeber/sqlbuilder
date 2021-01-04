@@ -6,7 +6,7 @@ namespace Expression;
 
 class In extends Expression
 {
-  const OPERATOR = 'IN';
+  protected string $operator = 'IN';
 
   protected string $expression;
   protected ?ValueList $valueList;
@@ -19,6 +19,6 @@ class In extends Expression
 
   public function __toString(): string
   {
-    return $this->expression . " " . self::OPERATOR . " " . $this->valueList;
+    return $this->expression . " " . $this->operator . " " . $this->valueList;
   }
 }

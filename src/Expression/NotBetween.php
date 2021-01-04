@@ -6,5 +6,5 @@ namespace Expression;
 
 class NotBetween extends Between
 {
-  const OPERATOR = 'NOT BETWEEN';
+  protected string $operator = 'NOT BETWEEN';
 }

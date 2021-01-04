@@ -8,7 +8,7 @@ use Value;
 
 class RegExp extends Expression
 {
-  const OPERATOR = 'REGEXP';
+  protected string $operator = 'REGEXP';
 
   protected string $expression;
   protected string $pattern;
@@ -21,6 +21,6 @@ class RegExp extends Expression
 
   public function __toString(): string
   {
-    return $this->expression . " " . self::OPERATOR . " " . Value::deflate($this->pattern);
+    return $this->expression . " " . $this->operator . " " . Value::deflate($this->pattern);
   }
 }

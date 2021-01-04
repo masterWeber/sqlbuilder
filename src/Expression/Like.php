@@ -8,7 +8,7 @@ use Value;
 
 class Like extends Expression
 {
-  const OPERATOR = 'LIKE';
+  protected string $operator = 'LIKE';
 
   protected string $expression;
   protected string $pattern;
@@ -21,6 +21,6 @@ class Like extends Expression
 
   public function __toString(): string
   {
-    return $this->expression . " " . self::OPERATOR . " " . Value::deflate($this->pattern);
+    return $this->expression . " " . $this->operator . " " . Value::deflate($this->pattern);
   }
 }

@@ -6,5 +6,5 @@ namespace Expression;
 
 class NotRegExp extends RegExp
 {
-  const OPERATOR = 'NOT REGEXP';
+  protected string $operator = 'NOT REGEXP';
 }

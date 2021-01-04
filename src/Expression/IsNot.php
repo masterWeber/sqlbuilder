@@ -6,5 +6,5 @@ namespace Expression;
 
 class IsNot extends Is
 {
-  const OPERATOR = 'IS NOT';
+  protected string $operator = 'IS NOT';
 }

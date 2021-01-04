@@ -8,19 +8,19 @@ use Value;
 
 class Is extends Expression
 {
-  const OPERATOR = 'IS';
+  protected string $operator = 'IS';
 
   protected string $expression;
-  protected bool $boolean;
+  protected ?bool $value;
 
-  public function __construct(string $expression, bool $boolean)
+  public function __construct(string $expression, $value)
   {
     $this->expression = $expression;
-    $this->boolean = $boolean;
+    $this->value = $value;
   }
 
   public function __toString(): string
   {
-    return $this->expression . " " . self::OPERATOR . " " . Value::deflate($this->boolean);
+    return $this->expression . " " . $this->operator . " " . Value::deflate($this->value);
   }
 }

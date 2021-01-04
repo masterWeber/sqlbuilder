@@ -4,15 +4,22 @@
 namespace Expression;
 
 
+use Value;
+
 class Between extends Expression
 {
-  const OPERATOR = 'BETWEEN';
-
+  protected string $operator = 'BETWEEN';
   protected string $expression;
-  protected string $min;
-  protected string $max;
+  /**
+   * @var mixed
+   */
+  protected $min;
+  /**
+   * @var mixed
+   */
+  protected $max;
 
-  public function __construct(string $expression, string $min, string $max)
+  public function __construct(string $expression, $min, $max)
   {
     $this->expression = $expression;
     $this->min = $min;
@@ -21,6 +28,7 @@ class Between extends Expression
 
   public function __toString(): string
   {
-    return $this->expression . " " . self::OPERATOR . " " . $this->min . " AND " . $this->max;
+    return $this->expression . " " . $this->operator . " "
+      . Value::deflate($this->min) . " AND " . Value::deflate($this->max);
   }
 }
