@@ -5,23 +5,28 @@ namespace Block;
 
 
 use AssignmentList;
-use WhereClause;
+use Clause\WhereClause;
 
 class Set
 {
   const STATEMENT = 'SET';
 
+  protected ?AssignmentList $assignmentList;
+  /**
+   * @var mixed
+   */
+  protected $parent;
+
   use WhereClause;
 
-  protected ?AssignmentList $assignmentList;
-
-  public function __construct(array $assignmentList)
+  public function __construct(array $assignmentList, $parent = null)
   {
     $this->assignmentList = AssignmentList::fromArray($assignmentList);
+    $this->parent = $parent;
   }
 
   public function __toString(): string
   {
-    return self::STATEMENT . " " . $this->assignmentList;
+    return trim($this->parent . ' ' . self::STATEMENT . ' ' . $this->assignmentList);
   }
 }

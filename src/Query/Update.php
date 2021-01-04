@@ -10,18 +10,25 @@ class Update extends Query
 {
   const STATEMENT = 'UPDATE';
 
-  public function __construct(string $tableReference)
+  protected string $tableReference;
+  /**
+   * @var mixed
+   */
+  protected $parent;
+
+  public function __construct(string $tableReference, $parent = null)
   {
     $this->tableReference = $tableReference;
+    $this->parent = $parent;
   }
 
   public function set(array $data): Set
   {
-    return new Set($data);
+    return new Set($data, $this);
   }
 
   public function __toString(): string
   {
-    return self::STATEMENT;
+    return trim($this->parent . ' ' . self::STATEMENT . ' ' . $this->tableReference);
   }
 }
