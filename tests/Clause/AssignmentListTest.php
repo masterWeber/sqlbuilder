@@ -23,12 +23,8 @@ class AssignmentListTest extends TestCase
       $assignmentList->get('key')
     );
 
-    $this->expectException(
-      Exception::class
-    );
-
     $this->assertEquals(
-      $assignment,
+      null,
       $assignmentList->get('undefined_key')
     );
   }

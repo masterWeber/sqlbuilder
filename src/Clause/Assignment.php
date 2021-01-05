@@ -21,4 +21,9 @@ class Assignment implements Stringable_
   {
     return $this->colName . " = " . $this->value;
   }
+
+  public function getColName(): string
+  {
+    return $this->colName;
+  }
 }

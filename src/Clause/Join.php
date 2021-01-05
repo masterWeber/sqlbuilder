@@ -64,7 +64,7 @@ class Join implements Stringable_
     $str = '';
 
     if ($this->type) {
-      $str .= ' ' . $this->type;
+      $str .= $this->type;
     }
 
     $str .= ' ' . self::STATEMENT . ' ' . $this->tableName;
@@ -73,6 +73,6 @@ class Join implements Stringable_
       $str .= ' AS ' . $this->alias;
     }
 
-    return $str;
+    return trim($this->parent . ' ' . $str);
   }
 }
