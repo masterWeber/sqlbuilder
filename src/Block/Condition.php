@@ -26,10 +26,8 @@ use Operator\LogicalXor;
 use Operator\Operator;
 use Value;
 
-class WhereConditions
+class Condition
 {
-  const STATEMENT = 'WHERE';
-
   /**
    * @var mixed
    */
@@ -194,7 +192,7 @@ class WhereConditions
 
   public function group(Closure $closure): self
   {
-    $groupCondition = new GroupWhereConditions();
+    $groupCondition = new GroupCondition();
     $closure($groupCondition);
     $this->expressions[] = $groupCondition;
 
@@ -232,6 +230,6 @@ class WhereConditions
 
   public function __toString(): string
   {
-    return trim($this->parent . ' ' . self::STATEMENT . ' ' . $this->buildExpressions());
+    return $this->buildExpressions();
   }
 }

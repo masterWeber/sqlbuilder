@@ -4,12 +4,26 @@
 namespace Query;
 
 
+use Clause\FromClause;
+
 class Delete extends Query
 {
-
   const STATEMENT = 'DELETE';
 
-  public function __construct()
+  /**
+   * @var mixed
+   */
+  protected $parent;
+
+  use FromClause;
+
+  public function __construct($parent = null)
   {
+    $this->parent = $parent;
+  }
+
+  public function __toString(): string
+  {
+    return trim($this->parent . ' ' . self::STATEMENT);
   }
 }
