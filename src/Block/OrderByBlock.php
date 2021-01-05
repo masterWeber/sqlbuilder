@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Clause;
+namespace Block;
 
 
-use Block\OrderBy;
+use Clause\OrderBy;
 
-trait OrderByClause
+trait OrderByBlock
 {
   public function orderBy($expression, $sorting = null): OrderBy
   {

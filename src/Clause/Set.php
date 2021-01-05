@@ -1,11 +1,10 @@
 <?php
 
 
-namespace Block;
+namespace Clause;
 
 
-use AssignmentList;
-use Clause\WhereClause;
+use Block\WhereBlock;
 
 class Set
 {
@@ -17,7 +16,7 @@ class Set
    */
   protected $parent;
 
-  use WhereClause;
+  use WhereBlock;
 
   public function __construct(array $assignmentList, $parent = null)
   {

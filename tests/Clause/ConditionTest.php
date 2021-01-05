@@ -1,8 +1,7 @@
 <?php
 
 
-use Block\Condition;
-use Expression\Raw;
+use Clause\Condition;
 use PHPUnit\Framework\TestCase;
 
 class ConditionTest extends TestCase

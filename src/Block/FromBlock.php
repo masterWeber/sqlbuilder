@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Clause;
+namespace Block;
 
 
-use Block\From;
+use Clause\From;
 
-trait FromClause
+trait FromBlock
 {
   public function from($table): From
   {

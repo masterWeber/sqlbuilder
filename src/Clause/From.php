@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Block;
+namespace Clause;
 
 
-use Clause\WhereClause;
+use Block\WhereBlock;
 
 class From
 {
@@ -16,7 +16,7 @@ class From
   protected $parent;
   protected array $list = [];
 
-  use WhereClause;
+  use WhereBlock;
 
   /**
    * @param array|string $table

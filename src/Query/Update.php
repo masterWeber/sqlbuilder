@@ -4,7 +4,7 @@
 namespace Query;
 
 
-use Block\Set;
+use Clause\Set;
 
 class Update extends Query
 {

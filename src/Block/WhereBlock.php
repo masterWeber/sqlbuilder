@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Clause;
+namespace Block;
 
 
-use Block\Where;
+use Clause\Where;
 
-trait WhereClause
+trait WhereBlock
 {
   public function where($expression = null): Where
   {

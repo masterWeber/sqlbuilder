@@ -1,6 +1,10 @@
 <?php
 
 
+namespace Clause;
+
+use Value;
+
 class Assignment
 {
   private string $colName;

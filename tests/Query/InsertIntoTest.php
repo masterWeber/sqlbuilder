@@ -2,6 +2,7 @@
 
 namespace Query;
 
+use DataType\Default_;
 use PHPUnit\Framework\TestCase;
 use SqlBuilder;
 
@@ -37,7 +38,7 @@ class InsertIntoTest extends TestCase
       'column_name_2',
     ])->values([
       'value_1',
-      'default',
+      new Default_(),
     ]);
 
     $this->assertEquals(

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Block;
+namespace Clause;
 
 
-use Clause\LimitClause;
+use Block\LimitBlock;
 
 class OrderBy
 {
@@ -24,7 +24,7 @@ class OrderBy
    */
   protected array $expressionList;
 
-  use LimitClause;
+  use LimitBlock;
 
   public function __construct($expression, $sorting = self::ASC, $parent = null)
   {

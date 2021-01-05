@@ -58,10 +58,6 @@ class InsertInto extends Query
 
     if ($this->values) {
       $preparedValues = array_map(function ($item) {
-        if (mb_strtolower($item) === 'default') {
-          return 'DEFAULT';
-        }
-
         return new Value($item);
       }, $this->values);
 

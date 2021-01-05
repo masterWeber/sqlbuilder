@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Block;
+namespace Clause;
 
-use Clause\LimitClause;
-use Clause\OrderByClause;
+use Block\LimitBlock;
+use Block\OrderByBlock;
 use Closure;
 use Expression\Between;
 use Expression\Binary;
@@ -34,8 +34,8 @@ class Condition
   protected $parent;
   protected array $expressions;
 
-  use OrderByClause;
-  use LimitClause;
+  use OrderByBlock;
+  use LimitBlock;
 
   public function __construct($expression = null, $parent = null)
   {

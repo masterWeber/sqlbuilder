@@ -1,6 +1,6 @@
 <?php
 
-namespace Block;
+namespace Clause;
 
 use PHPUnit\Framework\TestCase;
 

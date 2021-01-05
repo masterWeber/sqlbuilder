@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Clause;
+namespace Block;
 
 
-use Block\Limit;
+use Clause\Limit;
 
-trait LimitClause
+trait LimitBlock
 {
   public function limit(int $limit): Limit
   {

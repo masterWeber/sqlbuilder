@@ -2,7 +2,7 @@
 
 namespace Query;
 
-use Block\OrderBy;
+use Clause\OrderBy;
 use PHPUnit\Framework\TestCase;
 
 class UpdateTest extends TestCase

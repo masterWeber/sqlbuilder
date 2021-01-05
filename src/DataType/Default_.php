@@ -1,7 +1,9 @@
 <?php
 
 
-class DefaultValue
+namespace DataType;
+
+class Default_
 {
   public function __toString(): string
   {

@@ -1,16 +1,16 @@
 <?php
 
 
-namespace Block;
+namespace Clause;
 
 
-use Clause\WhereClause;
+use Block\WhereBlock;
 
 class On extends Condition
 {
   const STATEMENT = 'ON';
 
-  use WhereClause;
+  use WhereBlock;
 
   public function __toString(): string
   {

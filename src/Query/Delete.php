@@ -4,7 +4,7 @@
 namespace Query;
 
 
-use Clause\FromClause;
+use Block\FromBlock;
 
 class Delete extends Query
 {
@@ -15,7 +15,7 @@ class Delete extends Query
    */
   protected $parent;
 
-  use FromClause;
+  use FromBlock;
 
   public function __construct($parent = null)
   {

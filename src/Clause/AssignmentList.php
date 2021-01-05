@@ -1,5 +1,9 @@
 <?php
 
+namespace Clause;
+
+use Exception;
+use Value;
 
 class AssignmentList
 {

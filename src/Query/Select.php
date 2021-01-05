@@ -4,7 +4,7 @@
 namespace Query;
 
 
-use Clause\FromClause;
+use Block\FromBlock;
 
 class Select extends Query
 {
@@ -18,7 +18,7 @@ class Select extends Query
   protected array $fields;
   protected ?string $mode;
 
-  use FromClause;
+  use FromBlock;
 
   public function __construct(array $fields = ['*'], string $mode = null, $parent = null)
   {

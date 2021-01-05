@@ -1,7 +1,12 @@
 <?php
 
 
+namespace Clause;
+
+
+use Exception;
 use PHPUnit\Framework\TestCase;
+use Value;
 
 class AssignmentListTest extends TestCase
 {

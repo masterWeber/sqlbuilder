@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Block;
+namespace Clause;
 
 
 class Join
