@@ -11,6 +11,7 @@ class InsertInto extends Query
 
   const STATEMENT = 'INSERT INTO';
 
+  protected string $tableReference;
   protected array $columns = [];
   protected array $values = [];
   protected bool $defaultValues = false;
