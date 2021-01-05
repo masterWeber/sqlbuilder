@@ -5,19 +5,17 @@ namespace Query;
 
 
 use Block\FromBlock;
+use Stringable_;
 
-class Delete extends Query
+class Delete extends Query implements Stringable_
 {
   const STATEMENT = 'DELETE';
 
-  /**
-   * @var mixed
-   */
-  protected $parent;
+  protected ?Stringable_ $parent;
 
   use FromBlock;
 
-  public function __construct($parent = null)
+  public function __construct(Stringable_ $parent = null)
   {
     $this->parent = $parent;
   }

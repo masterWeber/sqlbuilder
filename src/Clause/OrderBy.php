@@ -5,17 +5,15 @@ namespace Clause;
 
 
 use Block\LimitBlock;
+use Stringable_;
 
-class OrderBy
+class OrderBy implements Stringable_
 {
   const STATEMENT = 'ORDER BY';
   const ASC = 'ASC';
   const DESC = 'DESC';
 
-  /**
-   * @var mixed
-   */
-  protected $parent;
+  protected ?Stringable_ $parent;
   /**
    * [
    *   ['column_name', 'ASC'],
@@ -26,7 +24,7 @@ class OrderBy
 
   use LimitBlock;
 
-  public function __construct($expression, $sorting = self::ASC, $parent = null)
+  public function __construct($expression, $sorting = self::ASC, Stringable_ $parent = null)
   {
     if (is_array($expression)) {
 

@@ -3,9 +3,10 @@
 
 namespace Clause;
 
+use Stringable_;
 use Value;
 
-class Assignment
+class Assignment implements Stringable_
 {
   private string $colName;
   private Value $value;
@@ -14,16 +15,6 @@ class Assignment
   {
     $this->colName = $colName;
     $this->value = $value;
-  }
-
-  public function getColName(): string
-  {
-    return $this->colName;
-  }
-
-  public function getValue(): Value
-  {
-    return $this->value;
   }
 
   public function __toString(): string

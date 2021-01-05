@@ -4,17 +4,16 @@
 namespace Clause;
 
 
-class Limit
+use Stringable_;
+
+class Limit implements Stringable_
 {
   const STATEMENT = 'LIMIT';
 
-  /**
-   * @var mixed
-   */
-  protected $parent;
+  protected ?Stringable_ $parent;
   protected int $limit;
 
-  public function __construct(int $limit, $parent = null)
+  public function __construct(int $limit, Stringable_ $parent = null)
   {
     $this->limit = $limit;
     $this->parent = $parent;

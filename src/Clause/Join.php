@@ -4,27 +4,25 @@
 namespace Clause;
 
 
-class Join
+use Stringable_;
+
+class Join implements Stringable_
 {
   const STATEMENT = 'JOIN';
   const INNER_TYPE = 'INNER';
   const LEFT_TYPE = 'LEFT';
   const RIGHT_TYPE = 'RIGHT';
 
-  /**
-   * @var mixed
-   */
-  protected $parent;
+  protected ?Stringable_ $parent;
   protected ?string $type = null;
   protected string $tableName;
   protected ?string $alias = null;
-  protected ?Condition $conditions;
 
   /**
    * @param array|string $table
-   * @param mixed $parent
+   * @param Stringable_|null $parent
    */
-  public function __construct($table, $parent = null)
+  public function __construct($table, Stringable_ $parent = null)
   {
     $this->parent = $parent;
 

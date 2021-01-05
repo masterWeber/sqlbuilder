@@ -4,20 +4,23 @@
 namespace Query;
 
 
+use Stringable_;
 use Value;
 
-class InsertInto extends Query
+class InsertInto extends Query implements Stringable_
 {
   const STATEMENT = 'INSERT INTO';
 
+  protected ?Stringable_ $parent;
   protected string $tableReference;
   protected array $columns = [];
   protected array $values = [];
   protected bool $defaultValues = false;
 
-  public function __construct(string $tableName)
+  public function __construct(string $tableReference, Stringable_ $parent = null)
   {
-    $this->tableReference = $tableName;
+    $this->tableReference = $tableReference;
+    $this->parent = $parent;
   }
 
   public function columns(array $columns): self

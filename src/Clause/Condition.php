@@ -24,20 +24,18 @@ use Operator\LogicalNot;
 use Operator\LogicalOr;
 use Operator\LogicalXor;
 use Operator\Operator;
+use Stringable_;
 use Value;
 
-class Condition
+class Condition implements Stringable_
 {
-  /**
-   * @var mixed
-   */
-  protected $parent;
+  protected ?Stringable_ $parent;
   protected array $expressions;
 
   use OrderByBlock;
   use LimitBlock;
 
-  public function __construct($expression = null, $parent = null)
+  public function __construct($expression = null, Stringable_ $parent = null)
   {
     if ($expression) {
       if (is_string($expression)) {

@@ -3,9 +3,10 @@
 namespace Clause;
 
 use Exception;
+use Stringable_;
 use Value;
 
-class AssignmentList
+class AssignmentList implements Stringable_
 {
   private array $items;
 
@@ -27,7 +28,7 @@ class AssignmentList
     return $this;
   }
 
-  public function get(string $key): Assignment
+  public function get(string $key): ?Assignment
   {
     foreach ($this->items as $item) {
       if ($item->getColName() === $key) {
@@ -35,7 +36,7 @@ class AssignmentList
       }
     }
 
-    throw new Exception('Undefined key.');
+    return null;
   }
 
   public function __toString(): string

@@ -5,22 +5,20 @@ namespace Query;
 
 
 use Block\FromBlock;
+use Stringable_;
 
-class Select extends Query
+class Select extends Query implements Stringable_
 {
   const STATEMENT = 'SELECT';
   const DISTINCT = 'DISTINCT';
 
-  /**
-   * @var mixed
-   */
-  protected $parent;
+  protected ?Stringable_ $parent;
   protected array $fields;
   protected ?string $mode;
 
   use FromBlock;
 
-  public function __construct(array $fields = ['*'], string $mode = null, $parent = null)
+  public function __construct(array $fields = ['*'], string $mode = null, Stringable_ $parent = null)
   {
     $this->fields = $fields;
     $this->mode = $mode;

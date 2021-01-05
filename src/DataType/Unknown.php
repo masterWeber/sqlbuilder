@@ -3,7 +3,9 @@
 
 namespace DataType;
 
-class Unknown
+use Stringable_;
+
+class Unknown implements Stringable_
 {
   public function __toString(): string
   {

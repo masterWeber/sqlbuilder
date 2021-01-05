@@ -3,7 +3,9 @@
 
 namespace DataType;
 
-class Default_
+use Stringable_;
+
+class Default_ implements Stringable_
 {
   public function __toString(): string
   {

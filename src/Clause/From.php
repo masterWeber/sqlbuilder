@@ -5,24 +5,22 @@ namespace Clause;
 
 
 use Block\WhereBlock;
+use Stringable_;
 
-class From
+class From implements Stringable_
 {
   const STATEMENT = 'FROM';
 
-  /**
-   * @var mixed
-   */
-  protected $parent;
+  protected ?Stringable_  $parent;
   protected array $list = [];
 
   use WhereBlock;
 
   /**
    * @param array|string $table
-   * @param mixed $parent
+   * @param Stringable_|null $parent
    */
-  public function __construct($table, $parent = null)
+  public function __construct($table, Stringable_ $parent = null)
   {
     $this->parent = $parent;
 
