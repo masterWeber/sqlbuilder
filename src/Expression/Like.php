@@ -9,7 +9,6 @@ use Value;
 class Like extends Expression
 {
   protected string $operator = 'LIKE';
-
   protected string $expression;
   protected string $pattern;
 

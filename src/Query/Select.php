@@ -8,7 +8,6 @@ use Clause\FromClause;
 
 class Select extends Query
 {
-
   const STATEMENT = 'SELECT';
   const DISTINCT = 'DISTINCT';
 

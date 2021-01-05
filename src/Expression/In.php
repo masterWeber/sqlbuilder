@@ -7,7 +7,6 @@ namespace Expression;
 class In extends Expression
 {
   protected string $operator = 'IN';
-
   protected string $expression;
   protected ?ValueList $valueList;
 

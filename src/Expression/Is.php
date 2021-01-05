@@ -9,7 +9,6 @@ use Value;
 class Is extends Expression
 {
   protected string $operator = 'IS';
-
   protected string $expression;
   protected ?bool $value;
 

@@ -8,7 +8,6 @@ use Query\Delete;
 
 class SqlBuilder
 {
-
   public function insertInto(string $tableName): InsertInto
   {
     return new InsertInto($tableName);

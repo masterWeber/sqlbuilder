@@ -9,7 +9,6 @@ use Value;
 class RegExp extends Expression
 {
   protected string $operator = 'REGEXP';
-
   protected string $expression;
   protected string $pattern;
 

@@ -8,7 +8,6 @@ use Value;
 
 class InsertInto extends Query
 {
-
   const STATEMENT = 'INSERT INTO';
 
   protected string $tableReference;
