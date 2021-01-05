@@ -4,6 +4,8 @@
 namespace Expression;
 
 
+use Clause\ValueList;
+
 class In extends Expression
 {
   protected string $operator = 'IN';

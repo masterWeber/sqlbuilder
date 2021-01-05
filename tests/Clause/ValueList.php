@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Expression;
+namespace Clause;
 
 
 use Value;
 
-class ValueList extends Expression
+class ValueList
 {
   protected array $values;
 
