@@ -3,20 +3,21 @@
 namespace Query;
 
 use PHPUnit\Framework\TestCase;
+use SqlBuilder;
 
 class SelectTest extends TestCase
 {
-
   public function testToString()
   {
-    $select = new Select();
+    $sqlBuilder = new SqlBuilder();
+    $select = $sqlBuilder->select();
 
     $this->assertEquals(
       'SELECT *',
       $select->__toString()
     );
 
-    $select = new Select([
+    $select = $sqlBuilder->select([
       'table_name' => 'alias',
       'table_1_name' => 't1_alias',
     ]);
@@ -26,7 +27,7 @@ class SelectTest extends TestCase
       $select->__toString()
     );
 
-    $select = new Select(['table_name' => 'alias']);
+    $select = $sqlBuilder->select(['table_name' => 'alias']);
     $select->distinct();
 
     $this->assertEquals(

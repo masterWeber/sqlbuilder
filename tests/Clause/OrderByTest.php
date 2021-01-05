@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class OrderByTest extends TestCase
 {
-
   public function testToString()
   {
     $orderBy = new OrderBy('col_name', OrderBy::DESC);

@@ -1,7 +1,9 @@
 <?php
 
 
-use Clause\Condition;
+namespace Clause;
+
+
 use PHPUnit\Framework\TestCase;
 
 class ConditionTest extends TestCase
@@ -91,7 +93,7 @@ class ConditionTest extends TestCase
   public function testIn(): void
   {
     $condition = new Condition();
-    $condition->in('a', [2,45,'23']);
+    $condition->in('a', [2, 45, '23']);
 
     $this->assertEquals(
       "a IN (2, 45, '23')",
@@ -102,7 +104,7 @@ class ConditionTest extends TestCase
   public function testNotIn(): void
   {
     $condition = new Condition();
-    $condition->notIn('a', [2,45,'23']);
+    $condition->notIn('a', [2, 45, '23']);
 
     $this->assertEquals(
       "a NOT IN (2, 45, '23')",

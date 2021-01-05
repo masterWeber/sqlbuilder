@@ -3,13 +3,14 @@
 namespace Query;
 
 use PHPUnit\Framework\TestCase;
+use SqlBuilder;
 
 class DeleteTest extends TestCase
 {
   public function testToString()
   {
-    $delete = new Delete();
-    $sql = $delete->from('table_name')
+    $sqlBuilder = new SqlBuilder();
+    $sql = $sqlBuilder->delete()->from('table_name')
       ->where()
       ->equal('id', 14)
       ->orderBy('id')

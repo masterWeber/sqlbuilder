@@ -8,7 +8,6 @@ use SqlBuilder;
 
 class InsertIntoTest extends TestCase
 {
-
   public function testToString()
   {
     $sqlBuilder = new SqlBuilder();

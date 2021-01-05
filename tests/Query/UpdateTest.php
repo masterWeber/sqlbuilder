@@ -4,12 +4,15 @@ namespace Query;
 
 use Clause\OrderBy;
 use PHPUnit\Framework\TestCase;
+use SqlBuilder;
 
 class UpdateTest extends TestCase
 {
   public function testToString()
   {
-    $update = new Update('table_reference');
+    $sqlBuilder = new SqlBuilder();
+
+    $update = $sqlBuilder->update('table_reference');
     $sql = $update->set([
       'count' => 5,
       'date' => '2000-01-01'

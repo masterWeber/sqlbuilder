@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class LimitTest extends TestCase
 {
-
   public function testToString()
   {
     $limit = new Limit(5);
