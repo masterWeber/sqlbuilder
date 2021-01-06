@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Block;
+namespace SQLBuilder\Block;
 
 
-use Clause\From;
-use Stringable_;
+use SQLBuilder\Clause\From;
+use SQLBuilder\Stringable_;
 
 trait FromBlock
 {

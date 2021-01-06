@@ -3,7 +3,7 @@
 namespace Query;
 
 use PHPUnit\Framework\TestCase;
-use SqlBuilder;
+use SQLBuilder\SQLBuilder;
 
 class DeleteTest extends TestCase
 {

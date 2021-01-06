@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Query;
+namespace SQLBuilder\Query;
 
 
-use Clause\Set;
-use Helper;
-use Stringable_;
+use SQLBuilder\Clause\Set;
+use SQLBuilder\Helper;
+use SQLBuilder\Stringable_;
 
 class Update extends Query implements Stringable_
 {

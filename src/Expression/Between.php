@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Expression;
+namespace SQLBuilder\Expression;
 
 
-use Helper;
+use SQLBuilder\Helper;
 
 class Between extends Expression
 {

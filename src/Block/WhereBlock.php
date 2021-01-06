@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Block;
+namespace SQLBuilder\Block;
 
 
-use Clause\Where;
-use Stringable_;
+use SQLBuilder\Clause\Where;
+use SQLBuilder\Stringable_;
 
 trait WhereBlock
 {

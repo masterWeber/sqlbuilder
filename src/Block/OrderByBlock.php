@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Block;
+namespace SQLBuilder\Block;
 
 
-use Clause\OrderBy;
-use Stringable_;
+use SQLBuilder\Clause\OrderBy;
+use SQLBuilder\Stringable_;
 
 trait OrderByBlock
 {

@@ -2,9 +2,9 @@
 
 namespace Query;
 
-use DataType\Default_;
+use SQLBuilder\DataType\Default_;
 use PHPUnit\Framework\TestCase;
-use SqlBuilder;
+use SQLBuilder\SQLBuilder;
 
 class InsertIntoTest extends TestCase
 {

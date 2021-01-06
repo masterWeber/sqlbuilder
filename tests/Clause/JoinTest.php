@@ -3,6 +3,7 @@
 namespace Clause;
 
 use PHPUnit\Framework\TestCase;
+use SQLBuilder\Clause\Join;
 
 class JoinTest extends TestCase
 {

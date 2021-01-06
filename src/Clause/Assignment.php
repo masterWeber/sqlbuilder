@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
-use Helper;
-use Stringable_;
-use Value;
+use SQLBuilder\Helper;
+use SQLBuilder\Stringable_;
+use SQLBuilder\Value;
 
 class Assignment implements Stringable_
 {

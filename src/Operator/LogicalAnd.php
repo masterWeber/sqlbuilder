@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Operator;
+namespace SQLBuilder\Operator;
 
 
 class LogicalAnd extends Operator

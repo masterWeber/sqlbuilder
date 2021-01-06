@@ -1,9 +1,9 @@
 <?php
 
 
-namespace DataType;
+namespace SQLBuilder\DataType;
 
-use Stringable_;
+use SQLBuilder\Stringable_;
 
 class Default_ implements Stringable_
 {

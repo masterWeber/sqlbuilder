@@ -5,7 +5,8 @@ namespace Clause;
 
 
 use PHPUnit\Framework\TestCase;
-use Value;
+use SQLBuilder\Clause\Assignment;
+use SQLBuilder\Value;
 
 class AssignmentTest extends TestCase
 {

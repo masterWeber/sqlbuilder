@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Operator;
+namespace SQLBuilder\Operator;
 
 
-use Stringable_;
+use SQLBuilder\Stringable_;
 
 abstract class Operator implements Stringable_
 {

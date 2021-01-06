@@ -3,6 +3,7 @@
 namespace Clause;
 
 use PHPUnit\Framework\TestCase;
+use SQLBuilder\Clause\OrderBy;
 
 class OrderByTest extends TestCase
 {

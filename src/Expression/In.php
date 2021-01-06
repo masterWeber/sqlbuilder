@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Expression;
+namespace SQLBuilder\Expression;
 
 
-use Clause\ValueList;
-use Helper;
+use SQLBuilder\Clause\ValueList;
+use SQLBuilder\Helper;
 
 class In extends Expression
 {

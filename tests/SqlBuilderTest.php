@@ -1,9 +1,10 @@
 <?php
 
 
-use Clause\OrderBy;
-use Expression\Column;
 use PHPUnit\Framework\TestCase;
+use SQLBuilder\Clause\OrderBy;
+use SQLBuilder\Expression\Column;
+use SQLBuilder\SQLBuilder;
 
 class SqlBuilderTest extends TestCase
 {

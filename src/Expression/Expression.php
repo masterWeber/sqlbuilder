@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Expression;
+namespace SQLBuilder\Expression;
 
 
-use Stringable_;
+use SQLBuilder\Stringable_;
 
 abstract class Expression implements Stringable_
 {

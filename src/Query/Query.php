@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Query;
+namespace SQLBuilder\Query;
 
 
 class Query

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Block;
+namespace SQLBuilder\Block;
 
 
-use Clause\Limit;
-use Stringable_;
+use SQLBuilder\Clause\Limit;
+use SQLBuilder\Stringable_;
 
 trait LimitBlock
 {

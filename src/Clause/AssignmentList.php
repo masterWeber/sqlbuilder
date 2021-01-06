@@ -1,10 +1,9 @@
 <?php
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
-use Exception;
-use Stringable_;
-use Value;
+use SQLBuilder\Stringable_;
+use SQLBuilder\Value;
 
 class AssignmentList implements Stringable_
 {

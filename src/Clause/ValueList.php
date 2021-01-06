@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
 
-use Value;
+use SQLBuilder\Value;
 
 class ValueList
 {

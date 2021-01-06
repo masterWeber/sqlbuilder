@@ -1,13 +1,12 @@
 <?php
 
 
-namespace Query;
+namespace SQLBuilder\Query;
 
 
-use Clause\ValueList;
-use Helper;
-use Stringable_;
-use Value;
+use SQLBuilder\Clause\ValueList;
+use SQLBuilder\Helper;
+use SQLBuilder\Stringable_;
 
 class InsertInto extends Query implements Stringable_
 {

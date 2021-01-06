@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
 
-use Helper;
-use Stringable_;
+use SQLBuilder\Helper;
+use SQLBuilder\Stringable_;
 
 class Join implements Stringable_
 {

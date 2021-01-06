@@ -3,6 +3,7 @@
 namespace Expression;
 
 use PHPUnit\Framework\TestCase;
+use SQLBuilder\Expression\Column;
 
 class ColumnTest extends TestCase
 {

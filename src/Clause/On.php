@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
 
-use Block\WhereBlock;
+use SQLBuilder\Block\WhereBlock;
 
 class On extends Condition
 {

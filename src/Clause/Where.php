@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
 
 class Where extends Condition

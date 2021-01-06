@@ -1,6 +1,8 @@
 <?php
 
 
+namespace SQLBuilder;
+
 class Value
 {
   /**

@@ -2,9 +2,9 @@
 
 namespace Query;
 
-use Clause\OrderBy;
 use PHPUnit\Framework\TestCase;
-use SqlBuilder;
+use SQLBuilder\Clause\OrderBy;
+use SQLBuilder\SQLBuilder;
 
 class UpdateTest extends TestCase
 {

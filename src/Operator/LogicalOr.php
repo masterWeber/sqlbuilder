@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Operator;
+namespace SQLBuilder\Operator;
 
 
 class LogicalOr extends Operator

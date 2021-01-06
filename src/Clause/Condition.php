@@ -1,31 +1,31 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
-use Block\LimitBlock;
-use Block\OrderByBlock;
+use SQLBuilder\Block\LimitBlock;
+use SQLBuilder\Block\OrderByBlock;
 use Closure;
-use Expression\Between;
-use Expression\Binary;
-use Expression\Expression;
-use Expression\In;
-use Expression\Is;
-use Expression\IsNot;
-use Expression\Like;
-use Expression\NotBetween;
-use Expression\NotIn;
-use Expression\NotLike;
-use Expression\NotRegExp;
-use Expression\Raw;
-use Expression\RegExp;
-use Helper;
-use Operator\LogicalAnd;
-use Operator\LogicalNot;
-use Operator\LogicalOr;
-use Operator\LogicalXor;
-use Operator\Operator;
-use Stringable_;
+use SQLBuilder\Expression\Between;
+use SQLBuilder\Expression\Binary;
+use SQLBuilder\Expression\Expression;
+use SQLBuilder\Expression\In;
+use SQLBuilder\Expression\Is;
+use SQLBuilder\Expression\IsNot;
+use SQLBuilder\Expression\Like;
+use SQLBuilder\Expression\NotBetween;
+use SQLBuilder\Expression\NotIn;
+use SQLBuilder\Expression\NotLike;
+use SQLBuilder\Expression\NotRegExp;
+use SQLBuilder\Expression\Raw;
+use SQLBuilder\Expression\RegExp;
+use SQLBuilder\Helper;
+use SQLBuilder\Operator\LogicalAnd;
+use SQLBuilder\Operator\LogicalNot;
+use SQLBuilder\Operator\LogicalOr;
+use SQLBuilder\Operator\LogicalXor;
+use SQLBuilder\Operator\Operator;
+use SQLBuilder\Stringable_;
 
 class Condition implements Stringable_
 {

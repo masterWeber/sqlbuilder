@@ -1,12 +1,14 @@
 <?php
 
 
-use Query\InsertInto;
-use Query\Select;
-use Query\Update;
-use Query\Delete;
+namespace SQLBuilder;
 
-class SqlBuilder
+use SQLBuilder\Query\InsertInto;
+use SQLBuilder\Query\Select;
+use SQLBuilder\Query\Update;
+use SQLBuilder\Query\Delete;
+
+class SQLBuilder
 {
   public function insertInto(string $tableName): InsertInto
   {

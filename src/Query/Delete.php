@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Query;
+namespace SQLBuilder\Query;
 
 
-use Block\FromBlock;
-use Stringable_;
+use SQLBuilder\Block\FromBlock;
+use SQLBuilder\Stringable_;
 
 class Delete extends Query implements Stringable_
 {

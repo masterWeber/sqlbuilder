@@ -3,6 +3,7 @@
 namespace Clause;
 
 use PHPUnit\Framework\TestCase;
+use SQLBuilder\Clause\Offset;
 
 class OffsetTest extends TestCase
 {

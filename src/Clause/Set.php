@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
 
-use Block\WhereBlock;
-use Stringable_;
+use SQLBuilder\Block\WhereBlock;
+use SQLBuilder\Stringable_;
 
 class Set implements Stringable_
 {

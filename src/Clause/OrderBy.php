@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
 
-use Block\LimitBlock;
-use Helper;
-use Stringable_;
+use SQLBuilder\Block\LimitBlock;
+use SQLBuilder\Helper;
+use SQLBuilder\Stringable_;
 
 class OrderBy implements Stringable_
 {

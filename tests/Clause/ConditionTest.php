@@ -5,6 +5,7 @@ namespace Clause;
 
 
 use PHPUnit\Framework\TestCase;
+use SQLBuilder\Clause\Condition;
 
 class ConditionTest extends TestCase
 {

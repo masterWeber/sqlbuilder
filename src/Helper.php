@@ -1,6 +1,10 @@
 <?php
 
 
+namespace SQLBuilder;
+
+use DateTime;
+
 class Helper
 {
   /**

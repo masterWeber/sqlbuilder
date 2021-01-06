@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
 
-use Stringable_;
+use SQLBuilder\Stringable_;
 
 class Offset
 {

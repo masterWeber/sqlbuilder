@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Expression;
+namespace SQLBuilder\Expression;
 
 
 class NotBetween extends Between

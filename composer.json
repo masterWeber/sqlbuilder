@@ -1,21 +1,22 @@
 {
-    "name": "masterweber/sqlbuilder",
-    "description": "Simple SQL query constructor.",
-    "type": "library",
-    "license": "MIT",
-    "keywords": [
-        "sql",
-        "sql-build"
-    ],
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^9"
-    },
+  "name": "masterweber/sqlbuilder",
+  "description": "Simple SQL query constructor.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "sql",
+    "sql-build"
+  ],
+  "autoload": {
+    "psr-4": {
+      "SQLBuilder\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  },
   "require": {
+    "php": ">=7.4",
     "ext-json": "*",
     "ext-mbstring": "*"
   }

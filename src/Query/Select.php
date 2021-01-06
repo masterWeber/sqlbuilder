@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Query;
+namespace SQLBuilder\Query;
 
 
-use Block\FromBlock;
-use Helper;
-use Stringable_;
+use SQLBuilder\Block\FromBlock;
+use SQLBuilder\Helper;
+use SQLBuilder\Stringable_;
 
 class Select extends Query implements Stringable_
 {

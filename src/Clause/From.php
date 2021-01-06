@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Clause;
+namespace SQLBuilder\Clause;
 
 
-use Block\WhereBlock;
-use Helper;
-use Stringable_;
+use SQLBuilder\Block\WhereBlock;
+use SQLBuilder\Helper;
+use SQLBuilder\Stringable_;
 
 class From implements Stringable_
 {

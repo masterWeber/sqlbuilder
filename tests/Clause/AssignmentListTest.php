@@ -4,9 +4,10 @@
 namespace Clause;
 
 
-use Exception;
 use PHPUnit\Framework\TestCase;
-use Value;
+use SQLBuilder\Clause\Assignment;
+use SQLBuilder\Clause\AssignmentList;
+use SQLBuilder\Value;
 
 class AssignmentListTest extends TestCase
 {
