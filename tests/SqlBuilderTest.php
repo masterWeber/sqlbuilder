@@ -35,10 +35,11 @@ class SqlBuilderTest extends TestCase
       ->from('zinger')
       ->where()
       ->equal('thunder', 5)
-      ->limit(17);
+      ->limit(17)
+      ->offset(10);
 
     $this->assertEquals(
-      'SELECT * FROM zinger WHERE thunder = 5 LIMIT 17',
+      'SELECT * FROM zinger WHERE thunder = 5 LIMIT 17 OFFSET 10',
       $sql->__toString()
     );
 

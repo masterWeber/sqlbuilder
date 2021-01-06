@@ -19,6 +19,11 @@ class Limit implements Stringable_
     $this->parent = $parent;
   }
 
+  public function offset(int $offset): Offset
+  {
+    return new Offset($offset, $this);
+  }
+
   public function __toString(): string
   {
     return trim($this->parent . ' ' . self::STATEMENT . ' ' . $this->limit);
