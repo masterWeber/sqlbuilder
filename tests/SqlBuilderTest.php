@@ -2,6 +2,7 @@
 
 
 use Clause\OrderBy;
+use Expression\Column;
 use PHPUnit\Framework\TestCase;
 
 class SqlBuilderTest extends TestCase
@@ -44,22 +45,23 @@ class SqlBuilderTest extends TestCase
       $sql->__toString()
     );
 
-    $sql = $sqlBuilder->select(['banana' => 'cocos'])
+    $sql = $sqlBuilder->select(['t1.column' => 'col1','t2.column' => 'col2'])
       ->distinct()
-      ->from(['russia' => 'germany'])
-      ->join(['bounty' => 'snickers'])
+      ->from(['table1' => 't1'])
+      ->join(['table2' => 't2'])
       ->right()
       ->on()
-      ->equal('banana', 'mendeleev')
+      ->equal('col1', Column::from('t2.col3'))
       ->where()
-      ->isNotNull('banana')
-      ->orderBy('cocos', OrderBy::DESC)
+      ->isNotNull('col1')
+      ->orderBy('col2', OrderBy::DESC)
       ->limit(12745);
 
     $this->assertEquals(
-      "SELECT DISTINCT `banana` AS `cocos` FROM `russia` AS `germany` " .
-      "RIGHT JOIN `bounty` AS `snickers` ON (`banana` = 'mendeleev')"
-      . " WHERE `banana` IS NOT NULL ORDER BY `cocos` DESC LIMIT 12745",
+      "SELECT DISTINCT `t1`.`column` AS `col1`, `t2`.`column` AS `col2`"
+      ." FROM `table1` AS `t1` " .
+      "RIGHT JOIN `table2` AS `t2` ON (`col1` = `t2`.`col3`)"
+      . " WHERE `col1` IS NOT NULL ORDER BY `col2` DESC LIMIT 12745",
       $sql->__toString()
     );
   }
