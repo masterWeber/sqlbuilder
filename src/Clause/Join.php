@@ -55,6 +55,12 @@ class Join implements Stringable_
     return $this;
   }
 
+  public function as(string $alias): self
+  {
+    $this->alias = $alias;
+    return $this;
+  }
+
   public function on($expression = null): On
   {
     return new On($expression, $this);
