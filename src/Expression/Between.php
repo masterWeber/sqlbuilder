@@ -4,7 +4,7 @@
 namespace Expression;
 
 
-use Value;
+use Helper;
 
 class Between extends Expression
 {
@@ -29,6 +29,6 @@ class Between extends Expression
   public function __toString(): string
   {
     return $this->expression . " " . $this->operator . " "
-      . Value::deflate($this->min) . " AND " . Value::deflate($this->max);
+      . Helper::deflate($this->min) . " AND " . Helper::deflate($this->max);
   }
 }

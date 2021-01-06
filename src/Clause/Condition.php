@@ -19,13 +19,13 @@ use Expression\NotLike;
 use Expression\NotRegExp;
 use Expression\Raw;
 use Expression\RegExp;
+use Helper;
 use Operator\LogicalAnd;
 use Operator\LogicalNot;
 use Operator\LogicalOr;
 use Operator\LogicalXor;
 use Operator\Operator;
 use Stringable_;
-use Value;
 
 class Condition implements Stringable_
 {
@@ -219,7 +219,7 @@ class Condition implements Stringable_
       } elseif (is_string($expression)) {
         $str .= $expression;
       } else {
-        $str .= Value::deflate($expression);
+        $str .= Helper::deflate($expression);
       }
     }
 

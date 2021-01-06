@@ -4,7 +4,7 @@
 namespace Expression;
 
 
-use Value;
+use Helper;
 
 class Binary extends Expression
 {
@@ -24,6 +24,6 @@ class Binary extends Expression
 
   public function __toString(): string
   {
-    return $this->leftOperand . " " . $this->operator . " " . Value::deflate($this->rightOperand);
+    return $this->leftOperand . " " . $this->operator . " " . Helper::deflate($this->rightOperand);
   }
 }

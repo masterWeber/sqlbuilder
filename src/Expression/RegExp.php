@@ -4,7 +4,7 @@
 namespace Expression;
 
 
-use Value;
+use Helper;
 
 class RegExp extends Expression
 {
@@ -20,6 +20,6 @@ class RegExp extends Expression
 
   public function __toString(): string
   {
-    return $this->expression . " " . $this->operator . " " . Value::deflate($this->pattern);
+    return $this->expression . " " . $this->operator . " " . Helper::deflate($this->pattern);
   }
 }
