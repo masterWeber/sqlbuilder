@@ -23,7 +23,7 @@ class SelectTest extends TestCase
     ]);
 
     $this->assertEquals(
-      'SELECT table_name AS alias, table_1_name AS t1_alias',
+      'SELECT `table_name` AS `alias`, `table_1_name` AS `t1_alias`',
       $select->__toString()
     );
 
@@ -31,7 +31,7 @@ class SelectTest extends TestCase
     $select->distinct();
 
     $this->assertEquals(
-      'SELECT DISTINCT table_name AS alias',
+      'SELECT DISTINCT `table_name` AS `alias`',
       $select->__toString()
     );
   }

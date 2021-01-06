@@ -5,13 +5,14 @@ namespace Clause;
 
 
 use Block\WhereBlock;
+use Helper;
 use Stringable_;
 
 class From implements Stringable_
 {
   const STATEMENT = 'FROM';
 
-  protected ?Stringable_  $parent;
+  protected ?Stringable_ $parent;
   protected array $list = [];
 
   use WhereBlock;
@@ -42,9 +43,9 @@ class From implements Stringable_
 
     foreach ($this->list as $key => $value) {
       if (is_string($key)) {
-        $str .= ", {$key} AS {$value}";
+        $str .= ", " . Helper::quoteTable($key) . " AS " . Helper::quoteTable($value);
       } else {
-        $str .= ", {$value}";
+        $str .= ", " . Helper::quoteTable($value);
       }
     }
 

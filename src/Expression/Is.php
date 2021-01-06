@@ -20,6 +20,6 @@ class Is extends Expression
 
   public function __toString(): string
   {
-    return $this->expression . " " . $this->operator . " " . Helper::deflate($this->value);
+    return Helper::quoteColumn($this->expression) . " " . $this->operator . " " . Helper::deflate($this->value);
   }
 }

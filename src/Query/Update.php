@@ -5,6 +5,7 @@ namespace Query;
 
 
 use Clause\Set;
+use Helper;
 use Stringable_;
 
 class Update extends Query implements Stringable_
@@ -27,6 +28,6 @@ class Update extends Query implements Stringable_
 
   public function __toString(): string
   {
-    return trim($this->parent . ' ' . self::STATEMENT . ' ' . $this->tableReference);
+    return trim($this->parent . ' ' . self::STATEMENT . ' ' . Helper::quoteTable($this->tableReference));
   }
 }

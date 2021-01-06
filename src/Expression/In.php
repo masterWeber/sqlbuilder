@@ -5,6 +5,7 @@ namespace Expression;
 
 
 use Clause\ValueList;
+use Helper;
 
 class In extends Expression
 {
@@ -20,6 +21,6 @@ class In extends Expression
 
   public function __toString(): string
   {
-    return $this->expression . " " . $this->operator . " " . $this->valueList;
+    return Helper::quoteColumn($this->expression) . " " . $this->operator . " " . $this->valueList;
   }
 }

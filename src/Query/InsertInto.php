@@ -4,6 +4,8 @@
 namespace Query;
 
 
+use Clause\ValueList;
+use Helper;
 use Stringable_;
 use Value;
 
@@ -48,7 +50,7 @@ class InsertInto extends Query implements Stringable_
 
   protected function buildSql(): string
   {
-    $sql = self::STATEMENT . " `{$this->tableReference}`";
+    $sql = self::STATEMENT . " " . Helper::quoteTable($this->tableReference);
 
     if ($this->columns) {
       $sql .= " (`" . implode("`, `", $this->columns) . "`)";
@@ -60,11 +62,7 @@ class InsertInto extends Query implements Stringable_
     }
 
     if ($this->values) {
-      $preparedValues = array_map(function ($item) {
-        return new Value($item);
-      }, $this->values);
-
-      $sql .= " VALUES (" . implode(", ", $preparedValues) . ")";
+      $sql .= " VALUES " . new ValueList($this->values);
     }
 
     return $sql;

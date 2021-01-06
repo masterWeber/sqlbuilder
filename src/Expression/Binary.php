@@ -24,6 +24,6 @@ class Binary extends Expression
 
   public function __toString(): string
   {
-    return $this->leftOperand . " " . $this->operator . " " . Helper::deflate($this->rightOperand);
+    return Helper::quoteColumn($this->leftOperand) . " " . $this->operator . " " . Helper::deflate($this->rightOperand);
   }
 }

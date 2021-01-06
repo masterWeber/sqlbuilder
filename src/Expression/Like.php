@@ -20,6 +20,6 @@ class Like extends Expression
 
   public function __toString(): string
   {
-    return $this->expression . " " . $this->operator . " " . Helper::deflate($this->pattern);
+    return Helper::quoteColumn($this->expression) . " " . $this->operator . " " . Helper::deflate($this->pattern);
   }
 }

@@ -5,6 +5,7 @@ namespace Clause;
 
 
 use Block\LimitBlock;
+use Helper;
 use Stringable_;
 
 class OrderBy implements Stringable_
@@ -51,7 +52,7 @@ class OrderBy implements Stringable_
 
     $str = '';
     foreach ($this->expressionList as $orderBy) {
-      $str .= ', ' . $orderBy[0];
+      $str .= ', ' . Helper::quoteColumn($orderBy[0]);
       if (array_key_exists(1, $orderBy)) {
         $str .= ' ' . $orderBy[1];
       }

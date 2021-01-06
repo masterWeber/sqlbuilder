@@ -21,9 +21,9 @@ class UpdateTest extends TestCase
       ->limit(1);
 
     $this->assertEquals(
-      "UPDATE table_reference "
-      . "SET count = 5, date = '2000-01-01'"
-      . " WHERE id = 5 ORDER BY id DESC LIMIT 1",
+      "UPDATE `table_reference` "
+      . "SET `count` = 5, `date` = '2000-01-01'"
+      . " WHERE `id` = 5 ORDER BY `id` DESC LIMIT 1",
       $sql->__toString()
     );
   }

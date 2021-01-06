@@ -3,6 +3,7 @@
 
 namespace Clause;
 
+use Helper;
 use Stringable_;
 use Value;
 
@@ -19,7 +20,7 @@ class Assignment implements Stringable_
 
   public function __toString(): string
   {
-    return $this->colName . " = " . $this->value;
+    return Helper::quoteColumn($this->colName) . " = " . $this->value;
   }
 
   public function getColName(): string

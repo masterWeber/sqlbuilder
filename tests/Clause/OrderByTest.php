@@ -11,7 +11,7 @@ class OrderByTest extends TestCase
     $orderBy = new OrderBy('col_name', OrderBy::DESC);
 
     $this->assertEquals(
-      'ORDER BY col_name DESC',
+      'ORDER BY `col_name` DESC',
       $orderBy->__toString()
     );
 
@@ -21,7 +21,7 @@ class OrderByTest extends TestCase
     ]);
 
     $this->assertEquals(
-      'ORDER BY col_name DESC, col_name_1 ASC',
+      'ORDER BY `col_name` DESC, `col_name_1` ASC',
       $orderBy->__toString()
     );
   }

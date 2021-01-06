@@ -5,6 +5,7 @@ namespace Query;
 
 
 use Block\FromBlock;
+use Helper;
 use Stringable_;
 
 class Select extends Query implements Stringable_
@@ -38,9 +39,9 @@ class Select extends Query implements Stringable_
     foreach ($this->fields as $key => $value) {
 
       if (is_int($key)) {
-        $str .= ', ' . $value;
+        $str .= ', ' . ($value === '*' ? $value : Helper::quoteColumn($value));
       } else {
-        $str .= ", {$key} AS {$value}";
+        $str .= ", " . Helper::quoteColumn($key) . " AS " . Helper::quoteColumn($value);
       }
 
     }

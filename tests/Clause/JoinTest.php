@@ -13,7 +13,7 @@ class JoinTest extends TestCase
       ->equal('t1.col', 't2.col');
 
     $this->assertEquals(
-      "JOIN table_name AS alias ON (t1.col = 't2.col')",
+      "JOIN `table_name` AS `alias` ON (`t1`.`col` = 't2.col')",
       $sql->__toString()
     );
 
@@ -22,7 +22,7 @@ class JoinTest extends TestCase
       ->equal('t1.col', 't2.col');
 
     $this->assertEquals(
-      "LEFT JOIN table_name AS alias ON (t1.col = 't2.col')",
+      "LEFT JOIN `table_name` AS `alias` ON (`t1`.`col` = 't2.col')",
       $sql->__toString()
     );
   }

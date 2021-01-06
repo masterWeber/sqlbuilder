@@ -4,6 +4,7 @@
 namespace Clause;
 
 
+use Helper;
 use Stringable_;
 
 class Join implements Stringable_
@@ -67,10 +68,10 @@ class Join implements Stringable_
       $str .= $this->type;
     }
 
-    $str .= ' ' . self::STATEMENT . ' ' . $this->tableName;
+    $str .= ' ' . self::STATEMENT . ' ' . Helper::quoteTable($this->tableName);
 
     if ($this->alias) {
-      $str .= ' AS ' . $this->alias;
+      $str .= ' AS ' . Helper::quoteTable($this->alias);
     }
 
     return trim($this->parent . ' ' . $str);

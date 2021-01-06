@@ -1,6 +1,7 @@
 <?php
 
 
+use Clause\OrderBy;
 use PHPUnit\Framework\TestCase;
 
 class SqlBuilderTest extends TestCase
@@ -39,7 +40,7 @@ class SqlBuilderTest extends TestCase
       ->offset(10);
 
     $this->assertEquals(
-      'SELECT * FROM zinger WHERE thunder = 5 LIMIT 17 OFFSET 10',
+      'SELECT * FROM `zinger` WHERE `thunder` = 5 LIMIT 17 OFFSET 10',
       $sql->__toString()
     );
 
@@ -52,13 +53,13 @@ class SqlBuilderTest extends TestCase
       ->equal('banana', 'mendeleev')
       ->where()
       ->isNotNull('banana')
-      ->orderBy('cocos', \Clause\OrderBy::DESC)
+      ->orderBy('cocos', OrderBy::DESC)
       ->limit(12745);
 
     $this->assertEquals(
-      "SELECT DISTINCT banana AS cocos FROM russia AS germany " .
-      "RIGHT JOIN bounty AS snickers ON (banana = 'mendeleev')"
-      . " WHERE banana IS NOT NULL ORDER BY cocos DESC LIMIT 12745",
+      "SELECT DISTINCT `banana` AS `cocos` FROM `russia` AS `germany` " .
+      "RIGHT JOIN `bounty` AS `snickers` ON (`banana` = 'mendeleev')"
+      . " WHERE `banana` IS NOT NULL ORDER BY `cocos` DESC LIMIT 12745",
       $sql->__toString()
     );
   }
@@ -73,8 +74,8 @@ class SqlBuilderTest extends TestCase
       ->limit(1);
 
     $this->assertEquals(
-      "UPDATE table_name SET col1 = 1,"
-      . " date = '2000-01-01' WHERE id = 5 LIMIT 1",
+      "UPDATE `table_name` SET `col1` = 1,"
+      . " `date` = '2000-01-01' WHERE `id` = 5 LIMIT 1",
       $sql->__toString()
     );
   }
@@ -92,8 +93,8 @@ class SqlBuilderTest extends TestCase
       ->limit(3);
 
     $this->assertEquals(
-      "DELETE FROM table_name"
-      . " WHERE col1 = 2 AND col2 = 23 LIMIT 3",
+      "DELETE FROM `table_name`"
+      . " WHERE `col1` = 2 AND `col2` = 23 LIMIT 3",
       $sql->__toString()
     );
   }

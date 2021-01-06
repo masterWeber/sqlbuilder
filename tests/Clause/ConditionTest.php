@@ -14,7 +14,7 @@ class ConditionTest extends TestCase
     $condition->equal('a', 25);
 
     $this->assertEquals(
-      "a = 25",
+      "`a` = 25",
       $condition->__toString()
     );
 
@@ -22,7 +22,7 @@ class ConditionTest extends TestCase
     $condition->equal('a', 'str_val');
 
     $this->assertEquals(
-      "a = 'str_val'",
+      "`a` = 'str_val'",
       $condition->__toString()
     );
   }
@@ -33,7 +33,7 @@ class ConditionTest extends TestCase
     $condition->notEqual('a', 25);
 
     $this->assertEquals(
-      "a <> 25",
+      "`a` <> 25",
       $condition->__toString()
     );
 
@@ -41,7 +41,7 @@ class ConditionTest extends TestCase
     $condition->notEqual('a', 'str_val');
 
     $this->assertEquals(
-      "a <> 'str_val'",
+      "`a` <> 'str_val'",
       $condition->__toString()
     );
   }
@@ -52,7 +52,7 @@ class ConditionTest extends TestCase
     $condition->greaterThan('a', 25);
 
     $this->assertEquals(
-      "a > 25",
+      "`a` > 25",
       $condition->__toString()
     );
   }
@@ -63,7 +63,7 @@ class ConditionTest extends TestCase
     $condition->greaterThanOrEqual('a', 25);
 
     $this->assertEquals(
-      "a >= 25",
+      "`a` >= 25",
       $condition->__toString()
     );
   }
@@ -74,7 +74,7 @@ class ConditionTest extends TestCase
     $condition->lessThan('a', 25);
 
     $this->assertEquals(
-      "a < 25",
+      "`a` < 25",
       $condition->__toString()
     );
   }
@@ -85,7 +85,7 @@ class ConditionTest extends TestCase
     $condition->lessThanOrEqual('a', 25);
 
     $this->assertEquals(
-      "a <= 25",
+      "`a` <= 25",
       $condition->__toString()
     );
   }
@@ -96,7 +96,7 @@ class ConditionTest extends TestCase
     $condition->in('a', [2, 45, '23']);
 
     $this->assertEquals(
-      "a IN (2, 45, '23')",
+      "`a` IN (2, 45, '23')",
       $condition->__toString()
     );
   }
@@ -107,7 +107,7 @@ class ConditionTest extends TestCase
     $condition->notIn('a', [2, 45, '23']);
 
     $this->assertEquals(
-      "a NOT IN (2, 45, '23')",
+      "`a` NOT IN (2, 45, '23')",
       $condition->__toString()
     );
   }
@@ -118,7 +118,7 @@ class ConditionTest extends TestCase
     $condition->like('a', '%str_');
 
     $this->assertEquals(
-      "a LIKE '%str_'",
+      "`a` LIKE '%str_'",
       $condition->__toString()
     );
   }
@@ -129,7 +129,7 @@ class ConditionTest extends TestCase
     $condition->notLike('a', '%str_');
 
     $this->assertEquals(
-      "a NOT LIKE '%str_'",
+      "`a` NOT LIKE '%str_'",
       $condition->__toString()
     );
   }
@@ -140,7 +140,7 @@ class ConditionTest extends TestCase
     $condition->is('a', true);
 
     $this->assertEquals(
-      "a IS true",
+      "`a` IS true",
       $condition->__toString()
     );
   }
@@ -151,7 +151,7 @@ class ConditionTest extends TestCase
     $condition->isNot('a', true);
 
     $this->assertEquals(
-      "a IS NOT true",
+      "`a` IS NOT true",
       $condition->__toString()
     );
   }
@@ -162,7 +162,7 @@ class ConditionTest extends TestCase
     $condition->isNull('a');
 
     $this->assertEquals(
-      "a IS NULL",
+      "`a` IS NULL",
       $condition->__toString()
     );
   }
@@ -173,7 +173,7 @@ class ConditionTest extends TestCase
     $condition->isNotNull('a');
 
     $this->assertEquals(
-      "a IS NOT NULL",
+      "`a` IS NOT NULL",
       $condition->__toString()
     );
   }
@@ -184,7 +184,7 @@ class ConditionTest extends TestCase
     $condition->between('a', 5, 7);
 
     $this->assertEquals(
-      "a BETWEEN 5 AND 7",
+      "`a` BETWEEN 5 AND 7",
       $condition->__toString()
     );
 
@@ -192,7 +192,7 @@ class ConditionTest extends TestCase
     $condition->between('a', '1990-01-01', '2000-01-01');
 
     $this->assertEquals(
-      "a BETWEEN '1990-01-01' AND '2000-01-01'",
+      "`a` BETWEEN '1990-01-01' AND '2000-01-01'",
       $condition->__toString()
     );
   }
@@ -203,7 +203,7 @@ class ConditionTest extends TestCase
     $condition->notBetween('a', 5, 7);
 
     $this->assertEquals(
-      "a NOT BETWEEN 5 AND 7",
+      "`a` NOT BETWEEN 5 AND 7",
       $condition->__toString()
     );
 
@@ -211,7 +211,7 @@ class ConditionTest extends TestCase
     $condition->notBetween('a', '1990-01-01', '2000-01-01');
 
     $this->assertEquals(
-      "a NOT BETWEEN '1990-01-01' AND '2000-01-01'",
+      "`a` NOT BETWEEN '1990-01-01' AND '2000-01-01'",
       $condition->__toString()
     );
   }
@@ -222,7 +222,7 @@ class ConditionTest extends TestCase
     $condition->regexp('a', '^\S');
 
     $this->assertEquals(
-      "a REGEXP '^\\\S'",
+      "`a` REGEXP '^\\\S'",
       $condition->__toString()
     );
   }
@@ -233,7 +233,7 @@ class ConditionTest extends TestCase
     $condition->notRegexp('a', '^\S');
 
     $this->assertEquals(
-      "a NOT REGEXP '^\\\S'",
+      "`a` NOT REGEXP '^\\\S'",
       $condition->__toString()
     );
   }
@@ -253,7 +253,7 @@ class ConditionTest extends TestCase
       ->equal('a', 25);
 
     $this->assertEquals(
-      "a = 25 AND a = 25 OR a = 25 NOT a = 25 XOR a = 25",
+      "`a` = 25 AND `a` = 25 OR `a` = 25 NOT `a` = 25 XOR `a` = 25",
       $condition->__toString()
     );
   }
@@ -266,7 +266,7 @@ class ConditionTest extends TestCase
     });
 
     $this->assertEquals(
-      "(id = 1)",
+      "(`id` = 1)",
       $condition->__toString()
     );
   }

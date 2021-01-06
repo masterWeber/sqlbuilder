@@ -17,8 +17,8 @@ class DeleteTest extends TestCase
       ->limit(1);
 
     $this->assertEquals(
-      "DELETE FROM table_name "
-      . "WHERE id = 14 ORDER BY id LIMIT 1",
+      "DELETE FROM `table_name` "
+      . "WHERE `id` = 14 ORDER BY `id` LIMIT 1",
       $sql->__toString()
     );
   }
