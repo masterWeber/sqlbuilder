@@ -46,10 +46,6 @@ class OrderBy implements Stringable_
 
   public function __toString(): string
   {
-    if (empty($this->expressionList)) {
-      return '';
-    }
-
     $str = '';
     foreach ($this->expressionList as $orderBy) {
       $str .= ', ' . Helper::quoteColumn($orderBy[0]);

@@ -27,7 +27,7 @@ use SQLBuilder\Operator\LogicalXor;
 use SQLBuilder\Operator\Operator;
 use SQLBuilder\Stringable_;
 
-class Condition implements Stringable_
+class Condition extends Expression implements Stringable_
 {
   protected ?Stringable_ $parent;
   protected array $expressions;
@@ -215,7 +215,7 @@ class Condition implements Stringable_
       }
 
       if ($expression instanceof Expression) {
-        $str .= $expression->__toString();
+        $str .= $expression;
       } elseif (is_string($expression)) {
         $str .= $expression;
       } else {

@@ -91,7 +91,6 @@ class SqlBuilderTest extends TestCase
       ->from('table_name')
       ->where()
       ->equal('col1', 2)
-      ->and()
       ->equal('col2', 23)
       ->limit(3);
 

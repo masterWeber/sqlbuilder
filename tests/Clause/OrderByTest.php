@@ -18,7 +18,7 @@ class OrderByTest extends TestCase
 
     $orderBy = new OrderBy([
       'col_name' => OrderBy::DESC,
-      'col_name_1' => OrderBy::ASC,
+      'col_name_1',
     ]);
 
     $this->assertEquals(
