@@ -45,3 +45,12 @@ $sql = $builder->select(['t1.column' => 'col1','t2.column' => 'col2'])
   FROM `table1` AS `t1` RIGHT JOIN `table2` AS `t2` ON (`col1` = `t2`.`col3`) 
   WHERE `col1` IS NOT NULL ORDER BY `col2` DESC LIMIT 10 OFFSET 10
 ```
+## Installation
+
+### Install through Composer
+
+    composer require masterweber/sqlbuilder
+    
+## Author
+
+masterWeber  <master.weber@outlook.com>    
