@@ -4,4 +4,4 @@ php:
   - 8.0
 
 script:
-  - phpunit tests
+  - phpunit tests --bootstrap="vendor/autoload.php"
