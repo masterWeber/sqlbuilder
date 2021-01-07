@@ -1,5 +1,7 @@
 # SQLBuilder
 
+[![Coverage Status](https://coveralls.io/repos/github/masterWeber/sqlbuilder/badge.svg?branch=master)](https://coveralls.io/github/masterWeber/sqlbuilder?branch=master)
+
 If you're looking for something that is not an ORM but can generate SQL for you, you just found the right one.
 
 SQLBuilder is not an ORM system, but a toolset that helps you generate SQL queries in PHP.
