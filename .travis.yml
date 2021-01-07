@@ -2,3 +2,11 @@ language: php
 php:
   - 7.4
   - 8.0
+install:
+  - phpenv rehash
+  - composer self-update
+  - composer require masterWeber/sqlbuilder  --no-update --dev --prefer-dist
+  - composer install
+
+script:
+  - phpunit tests
