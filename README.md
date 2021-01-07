@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.org/masterWeber/sqlbuilder.svg?branch=master)](https://travis-ci.org/masterWeber/sqlbuilder)
 [![Coverage Status](https://coveralls.io/repos/github/masterWeber/sqlbuilder/badge.svg?branch=master)](https://coveralls.io/github/masterWeber/sqlbuilder?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/masterweber/sqlbuilder/v)](https://packagist.org/packages/masterweber/sqlbuilder)
+[![Total Downloads](https://poser.pugx.org/masterweber/sqlbuilder/downloads)](https://packagist.org/packages/masterweber/sqlbuilder)
+[![Latest Unstable Version](https://poser.pugx.org/masterweber/sqlbuilder/v/unstable)](https://packagist.org/packages/masterweber/sqlbuilder)
+[![License](https://poser.pugx.org/masterweber/sqlbuilder/license)](https://packagist.org/packages/masterweber/sqlbuilder)
 
 If you're looking for something that is not an ORM but can generate SQL for you, you just found the right one.
 
