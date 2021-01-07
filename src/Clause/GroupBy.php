@@ -15,7 +15,7 @@ class GroupBy implements Stringable_
 
   /**
    * [
-   *   'column_1',
+   *   ['column_1', => null]
    *   ['column_2' => 'WITH ROLLUP']
    * ]
    */
