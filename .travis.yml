@@ -3,5 +3,10 @@ php:
   - 7.4
   - 8.0
 
+install:
+  - phpenv rehash
+  - composer self-update
+  - composer install
+
 script:
   - phpunit tests --bootstrap="vendor/autoload.php"
