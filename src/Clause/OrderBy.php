@@ -4,6 +4,7 @@
 namespace SQLBuilder\Clause;
 
 
+use SQLBuilder\Block\GroupByBlock;
 use SQLBuilder\Block\LimitBlock;
 use SQLBuilder\Helper;
 use SQLBuilder\Stringable_;
@@ -24,6 +25,7 @@ class OrderBy implements Stringable_
   protected array $expressionList;
 
   use LimitBlock;
+  use GroupByBlock;
 
   public function __construct($expression, $sorting = self::ASC, Stringable_ $parent = null)
   {

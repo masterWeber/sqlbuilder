@@ -4,6 +4,8 @@
 namespace SQLBuilder\Clause;
 
 
+use SQLBuilder\Block\GroupByBlock;
+use SQLBuilder\Block\OrderByBlock;
 use SQLBuilder\Block\WhereBlock;
 use SQLBuilder\Helper;
 use SQLBuilder\Stringable_;
@@ -16,6 +18,8 @@ class From implements Stringable_
   protected array $list = [];
 
   use WhereBlock;
+  use OrderByBlock;
+  use GroupByBlock;
 
   /**
    * @param array|string $table

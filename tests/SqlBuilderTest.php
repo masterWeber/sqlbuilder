@@ -46,6 +46,15 @@ class SqlBuilderTest extends TestCase
       $sql->__toString()
     );
 
+    $sql = $sqlBuilder->select()
+      ->from('table_name')
+      ->groupBy('col');
+
+    $this->assertEquals(
+      'SELECT * FROM `table_name` GROUP BY `col`',
+      $sql->__toString()
+    );
+
     $sql = $sqlBuilder->select(['t1.column' => 'col1','t2.column' => 'col2'])
       ->distinct()
       ->from(['table1' => 't1'])
