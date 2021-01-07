@@ -6,7 +6,11 @@ php:
 install:
   - phpenv rehash
   - composer self-update
+  - composer require --dev php-coveralls/php-coveralls
   - composer install
 
 script:
-  - phpunit tests --bootstrap="vendor/autoload.php"
+  - phpunit ./tests --bootstrap="vendor/autoload.php" --coverage-clover ./build/logs/clover.xml --whitelist src
+
+after_script:
+  - php vendor/bin/coveralls -v
