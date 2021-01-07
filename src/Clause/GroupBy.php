@@ -4,6 +4,7 @@
 namespace SQLBuilder\Clause;
 
 
+use SQLBuilder\Block\HavingBlock;
 use SQLBuilder\Block\LimitBlock;
 use SQLBuilder\Helper;
 use SQLBuilder\Stringable_;
@@ -22,6 +23,7 @@ class GroupBy implements Stringable_
   protected array $expressionList;
   protected ?Stringable_ $parent;
 
+  use HavingBlock;
   use LimitBlock;
 
   public function __construct($expression, ?string $modifier = null, ?Stringable_ $parent = null)

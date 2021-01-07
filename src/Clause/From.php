@@ -5,6 +5,7 @@ namespace SQLBuilder\Clause;
 
 
 use SQLBuilder\Block\GroupByBlock;
+use SQLBuilder\Block\HavingBlock;
 use SQLBuilder\Block\OrderByBlock;
 use SQLBuilder\Block\WhereBlock;
 use SQLBuilder\Helper;
@@ -20,6 +21,7 @@ class From implements Stringable_
   use WhereBlock;
   use OrderByBlock;
   use GroupByBlock;
+  use HavingBlock;
 
   /**
    * @param array|string $table

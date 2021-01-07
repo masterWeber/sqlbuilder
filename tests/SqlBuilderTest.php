@@ -48,14 +48,16 @@ class SqlBuilderTest extends TestCase
 
     $sql = $sqlBuilder->select()
       ->from('table_name')
-      ->groupBy('col');
+      ->groupBy('col')
+      ->having()
+      ->lessThan('col', 5);
 
     $this->assertEquals(
-      'SELECT * FROM `table_name` GROUP BY `col`',
+      'SELECT * FROM `table_name` GROUP BY `col` HAVING `col` < 5',
       $sql->__toString()
     );
 
-    $sql = $sqlBuilder->select(['t1.column' => 'col1','t2.column' => 'col2'])
+    $sql = $sqlBuilder->select(['t1.column' => 'col1', 't2.column' => 'col2'])
       ->distinct()
       ->from(['table1' => 't1'])
       ->join(['table2' => 't2'])
@@ -69,7 +71,7 @@ class SqlBuilderTest extends TestCase
 
     $this->assertEquals(
       "SELECT DISTINCT `t1`.`column` AS `col1`, `t2`.`column` AS `col2`"
-      ." FROM `table1` AS `t1` " .
+      . " FROM `table1` AS `t1` " .
       "RIGHT JOIN `table2` AS `t2` ON (`col1` = `t2`.`col3`)"
       . " WHERE `col1` IS NOT NULL ORDER BY `col2` DESC LIMIT 12745",
       $sql->__toString()
