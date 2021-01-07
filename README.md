@@ -39,6 +39,9 @@ $sql = $builder->select(['t1.column' => 'col1','t2.column' => 'col2'])
   ->orderBy('col2', OrderBy::DESC)
   ->limit(10)
   ->offset(10);
-
-echo $sql; // "SELECT `t1`.`column` AS `col1`, `t2`.`column` AS `col2` FROM `table1` AS `t1` RIGHT JOIN `table2` AS `t2` ON (`col1` = `t2`.`col3`) WHERE `col1` IS NOT NULL ORDER BY `col2` DESC LIMIT 10 OFFSET 10"
+```
+```sql
+  SELECT `t1`.`column` AS `col1`, `t2`.`column` AS `col2` 
+  FROM `table1` AS `t1` RIGHT JOIN `table2` AS `t2` ON (`col1` = `t2`.`col3`) 
+  WHERE `col1` IS NOT NULL ORDER BY `col2` DESC LIMIT 10 OFFSET 10
 ```
