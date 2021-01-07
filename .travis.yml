@@ -10,7 +10,8 @@ install:
   - composer install
 
 script:
+  - mkdir -p build/logs
   - XDEBUG_MODE=coverage phpunit ./tests --bootstrap="vendor/autoload.php" --coverage-clover ./build/logs/clover.xml --whitelist src
 
 after_script:
-  - php vendor/bin/coveralls -v
+  - travis_retry php vendor/bin/php-coveralls
