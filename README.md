@@ -1,5 +1,6 @@
 # SQLBuilder
 
+[![Build Status](https://travis-ci.org/masterWeber/sqlbuilder.svg?branch=master)](https://travis-ci.org/masterWeber/sqlbuilder)
 [![Coverage Status](https://coveralls.io/repos/github/masterWeber/sqlbuilder/badge.svg?branch=master)](https://coveralls.io/github/masterWeber/sqlbuilder?branch=master)
 
 If you're looking for something that is not an ORM but can generate SQL for you, you just found the right one.
