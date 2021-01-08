@@ -8,7 +8,7 @@ use SQLBuilder\Block\LimitBlock;
 use SQLBuilder\Block\OrderByBlock;
 use SQLBuilder\Stringable_;
 
-class Union implements Stringable_
+class Union extends Query
 {
   const STATEMENT = 'UNION';
 

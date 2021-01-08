@@ -8,7 +8,7 @@ use SQLBuilder\Block\FromBlock;
 use SQLBuilder\Helper;
 use SQLBuilder\Stringable_;
 
-class Select extends Query implements Stringable_
+class Select extends Query
 {
   const STATEMENT = 'SELECT';
   const DISTINCT = 'DISTINCT';

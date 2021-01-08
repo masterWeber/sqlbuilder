@@ -7,7 +7,7 @@ namespace SQLBuilder\Query;
 use SQLBuilder\Block\FromBlock;
 use SQLBuilder\Stringable_;
 
-class Delete extends Query implements Stringable_
+class Delete extends Query
 {
   const STATEMENT = 'DELETE';
 

@@ -8,7 +8,7 @@ use SQLBuilder\Clause\ValueList;
 use SQLBuilder\Helper;
 use SQLBuilder\Stringable_;
 
-class InsertInto extends Query implements Stringable_
+class InsertInto extends Query
 {
   const STATEMENT = 'INSERT INTO';
 

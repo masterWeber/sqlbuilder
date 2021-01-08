@@ -8,7 +8,7 @@ use SQLBuilder\Clause\Set;
 use SQLBuilder\Helper;
 use SQLBuilder\Stringable_;
 
-class Update extends Query implements Stringable_
+class Update extends Query
 {
   const STATEMENT = 'UPDATE';
 
