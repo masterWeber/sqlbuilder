@@ -6,6 +6,7 @@ namespace SQLBuilder\Clause;
 
 use SQLBuilder\Block\GroupByBlock;
 use SQLBuilder\Block\HavingBlock;
+use SQLBuilder\Block\LimitBlock;
 use SQLBuilder\Block\OrderByBlock;
 use SQLBuilder\Block\WhereBlock;
 use SQLBuilder\Helper;
@@ -19,6 +20,7 @@ class From implements Stringable_
   protected array $list = [];
 
   use WhereBlock;
+  use LimitBlock;
   use OrderByBlock;
   use GroupByBlock;
   use HavingBlock;
