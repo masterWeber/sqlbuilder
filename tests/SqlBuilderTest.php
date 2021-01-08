@@ -78,6 +78,33 @@ class SqlBuilderTest extends TestCase
     );
   }
 
+  public function testUnion(): void
+  {
+    $sqlBuilder = new SqlBuilder();
+
+    $select1 = $sqlBuilder->select(['col_name' => 'c'])
+      ->distinct()
+      ->from(['table_name' => 't'])
+      ->limit(5);
+
+    $select2 = $sqlBuilder->select()
+      ->from('table_name');
+
+    $select3 = $sqlBuilder->select()
+      ->from('table_name');
+
+    $union = $sqlBuilder->union($select1, $select2)
+      ->union($select3)
+      ->orderBy('c');
+
+    $this->assertEquals(
+      "(SELECT DISTINCT `col_name` AS `c` FROM `table_name` AS `t` LIMIT 5) "
+      . "UNION (SELECT * FROM `table_name`) "
+      . "UNION (SELECT * FROM `table_name`) ORDER BY `c`",
+      $union->__toString()
+    );
+  }
+
   public function testUpdate(): void
   {
     $sqlBuilder = new SqlBuilder();
