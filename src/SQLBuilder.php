@@ -4,6 +4,7 @@
 namespace SQLBuilder;
 
 use SQLBuilder\Query\CreateDatabase;
+use SQLBuilder\Query\DropDatabase;
 use SQLBuilder\Query\InsertInto;
 use SQLBuilder\Query\Select;
 use SQLBuilder\Query\Union;
@@ -40,5 +41,10 @@ class SQLBuilder
   public function createDatabase(string $dbName): CreateDatabase
   {
     return new CreateDatabase($dbName);
+  }
+
+  public function dropDatabase(string $dbName): DropDatabase
+  {
+    return new DropDatabase($dbName);
   }
 }

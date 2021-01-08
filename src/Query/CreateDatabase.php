@@ -5,15 +5,12 @@ namespace SQLBuilder\Query;
 
 
 use SQLBuilder\Helper;
+use SQLBuilder\Option;
 use SQLBuilder\Stringable_;
 
 class CreateDatabase extends Query
 {
   const STATEMENT = 'CREATE DATABASE';
-  const IF_NOT_EXISTS = 'IF NOT EXISTS';
-  const CHARACTER_SET = 'CHARACTER SET';
-  const COLLATE = 'COLLATE';
-  const ENCRYPTION = 'ENCRYPTION';
 
   protected string $dbName;
   protected bool $ifNoExists = false;
@@ -57,21 +54,21 @@ class CreateDatabase extends Query
     $str = self::STATEMENT;
 
     if ($this->ifNoExists) {
-      $str .= " " . self::IF_NOT_EXISTS;
+      $str .= " " . Option::IF_NOT_EXISTS;
     }
 
     $str .= " " . Helper::quoteIdentifier($this->dbName);
 
     if ($this->charsetName) {
-      $str .= " " . self::CHARACTER_SET . " " . Helper::quote($this->charsetName);
+      $str .= " " . Option::CHARACTER_SET . " " . Helper::quote($this->charsetName);
     }
 
     if ($this->collationName) {
-      $str .= " " . self::COLLATE . " " . Helper::quote($this->collationName);
+      $str .= " " . Option::COLLATE . " " . Helper::quote($this->collationName);
     }
 
     if (!is_null($this->encryption)) {
-      $str .= " " . self::ENCRYPTION;
+      $str .= " " . Option::ENCRYPTION;
       if ($this->encryption) {
         $str .= " 'Y'";
       } else {

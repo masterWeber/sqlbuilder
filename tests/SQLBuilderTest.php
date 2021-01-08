@@ -6,7 +6,7 @@ use SQLBuilder\Clause\OrderBy;
 use SQLBuilder\Expression\Column;
 use SQLBuilder\SQLBuilder;
 
-class SqlBuilderTest extends TestCase
+class SQLBuilderTest extends TestCase
 {
   public function testInsertInto(): void
   {
@@ -151,6 +151,19 @@ class SqlBuilderTest extends TestCase
 
     $this->assertEquals(
       "CREATE DATABASE IF NOT EXISTS `db_name` CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' ENCRYPTION 'N'",
+      $sql->__toString()
+    );
+  }
+
+  public function testDropDatabase(): void
+  {
+    $sqlBuilder = new SqlBuilder();
+
+    $sql = $sqlBuilder->dropDatabase('db_name')
+      ->ifExists();
+
+    $this->assertEquals(
+      "DROP DATABASE IF EXISTS `db_name`",
       $sql->__toString()
     );
   }
