@@ -3,6 +3,7 @@
 
 namespace SQLBuilder;
 
+use SQLBuilder\Query\CreateDatabase;
 use SQLBuilder\Query\InsertInto;
 use SQLBuilder\Query\Select;
 use SQLBuilder\Query\Union;
@@ -34,5 +35,10 @@ class SQLBuilder
   public function delete(): Delete
   {
     return new Delete();
+  }
+
+  public function createDatabase(string $dbName): CreateDatabase
+  {
+    return new CreateDatabase($dbName);
   }
 }

@@ -138,4 +138,20 @@ class SqlBuilderTest extends TestCase
       $sql->__toString()
     );
   }
+
+  public function testCreateDatabase(): void
+  {
+    $sqlBuilder = new SqlBuilder();
+
+    $sql = $sqlBuilder->createDatabase('db_name')
+      ->ifNoExists()
+      ->characterSet('utf8')
+      ->collate('utf8_general_ci')
+      ->encryption(false);
+
+    $this->assertEquals(
+      "CREATE DATABASE IF NOT EXISTS `db_name` CHARACTER SET 'utf8' COLLATE 'utf8_general_ci' ENCRYPTION 'N'",
+      $sql->__toString()
+    );
+  }
 }
