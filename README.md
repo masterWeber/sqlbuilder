@@ -46,7 +46,7 @@ $sql = $builder->select(['t1.column' => 'col1','t2.column' => 'col2'])
   WHERE `col1` IS NOT NULL ORDER BY `col2` DESC LIMIT 10 OFFSET 10
 ```
 
-## Queries
+## CRUD Query Examples
 
 ### Insert
 
