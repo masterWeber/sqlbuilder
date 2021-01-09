@@ -175,7 +175,7 @@ class SQLBuilderTest extends TestCase
     $sqlBuilder = new SqlBuilder();
 
     $sql = $sqlBuilder->alterDatabase('db_name')
-      ->encryption(false)->readOnly(true);
+      ->encryption(true)->readOnly(true);
 
     $this->assertEquals(
       "ALTER DATABASE `db_name` ENCRYPTION 'Y' READ ONLY 1",

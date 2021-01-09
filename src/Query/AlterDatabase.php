@@ -87,7 +87,7 @@ class AlterDatabase extends Query
         $str .= " " . Option::DEFAULT;
       }
       $str .= " " . Option::ENCRYPTION;
-      if ($this->encryption) {
+      if ($this->encryption['encrypt']) {
         $str .= " 'Y'";
       } else {
         $str .= " 'N'";

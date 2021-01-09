@@ -29,7 +29,7 @@ class AlterDatabaseTest extends TestCase
       ->readOnly(false);
 
     $this->assertEquals(
-      "ALTER DATABASE `db_name` CHARACTER SET 'utf8' COLLATE 'general_ci' ENCRYPTION 'Y' READ ONLY 0",
+      "ALTER DATABASE `db_name` CHARACTER SET 'utf8' COLLATE 'general_ci' ENCRYPTION 'N' READ ONLY 0",
       $sql->__toString()
     );
 
