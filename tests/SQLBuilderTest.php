@@ -42,7 +42,8 @@ class SQLBuilderTest extends TestCase
       ->offset(10);
 
     $this->assertEquals(
-      'SELECT * FROM `zinger` WHERE `thunder` = 5 LIMIT 17 OFFSET 10',
+      "SELECT * FROM `zinger` "
+      . "WHERE `thunder` = 5 LIMIT 17 OFFSET 10",
       $sql->__toString()
     );
 
@@ -115,7 +116,8 @@ class SQLBuilderTest extends TestCase
       ->limit(1);
 
     $this->assertEquals(
-      "UPDATE `table_name` SET `col1` = 1,"
+      "UPDATE `table_name` "
+      . "SET `col1` = 1,"
       . " `date` = '2000-01-01' WHERE `id` = 5 LIMIT 1",
       $sql->__toString()
     );
@@ -164,6 +166,19 @@ class SQLBuilderTest extends TestCase
 
     $this->assertEquals(
       "DROP DATABASE IF EXISTS `db_name`",
+      $sql->__toString()
+    );
+  }
+
+  public function testAlterDatabase(): void
+  {
+    $sqlBuilder = new SqlBuilder();
+
+    $sql = $sqlBuilder->alterDatabase('db_name')
+      ->encryption(false)->readOnly(true);
+
+    $this->assertEquals(
+      "ALTER DATABASE `db_name` ENCRYPTION 'Y' READ ONLY 1",
       $sql->__toString()
     );
   }

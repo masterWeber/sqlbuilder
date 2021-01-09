@@ -16,7 +16,7 @@ class CreateDatabase extends Query
   protected bool $ifNoExists = false;
   protected ?string $charsetName = null;
   protected ?string $collationName = null;
-  protected bool $encryption = false;
+  protected ?bool $encryption = null;
   protected ?Stringable_ $parent;
 
   public function __construct(string $dbName, ?Stringable_ $parent = null)

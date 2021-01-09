@@ -3,6 +3,7 @@
 
 namespace SQLBuilder;
 
+use SQLBuilder\Query\AlterDatabase;
 use SQLBuilder\Query\CreateDatabase;
 use SQLBuilder\Query\DropDatabase;
 use SQLBuilder\Query\InsertInto;
@@ -46,5 +47,10 @@ class SQLBuilder
   public function dropDatabase(string $dbName): DropDatabase
   {
     return new DropDatabase($dbName);
+  }
+
+  public function alterDatabase(string $dbName): AlterDatabase
+  {
+    return new AlterDatabase($dbName);
   }
 }
