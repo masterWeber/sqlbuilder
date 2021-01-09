@@ -45,9 +45,9 @@ class MapperTest extends TestCase
     );
   }
 
-  protected function testReplaceAliasesWithNames(): void
+  public function testReplaceAliasesWithNames(): void
   {
-    $mapper = Mapper::fromArray($this->dataProvide());
+    $mapper = new Mapper($this->dataProvide());
 
     $this->assertEquals([
       'col_1' => 'value',
